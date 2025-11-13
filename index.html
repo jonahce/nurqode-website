@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NurQode - Premium Web Development Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #0A192F;
+            --accent: #00E6B8;
+            --secondary: #E1C699;
+            --background: #F8F9FA;
+            --text: #2E2E2E;
+            --gradient: linear-gradient(90deg, #00E6B8 0%, #0095FF 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            margin: 0;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Currency Selector */
+        .currency-selector {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            color: white;
+        }
+
+        .currency-selector select {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        .currency-selector select option {
+            color: var(--text);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%2300E6B8" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background-color: var(--background);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--accent);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Login Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 10px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        .modal h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .modal .form-group {
+            margin-bottom: 20px;
+        }
+
+        .modal .form-group label {
+            color: var(--text);
+        }
+
+        .modal .form-group input {
+            background: white;
+            border: 1px solid #ddd;
+            color: var(--text);
+        }
+
+        .modal .form-group input:focus {
+            border-color: var(--accent);
+        }
+
+        .modal .btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .modal-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .modal-footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* FAQ Section Styles */
+        .faq {
+            background-color: var(--background);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+            margin: 0;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Language Switcher Styles */
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            color: white;
+        }
+
+        .language-switcher select {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+        .language-switcher select option {
+            color: var(--text);
+        }
+
+        /* RTL Support for Arabic */
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .logo h1,
+        [dir="rtl"] .hero h1,
+        [dir="rtl"] .section-title h2,
+        [dir="rtl"] .service-card h3,
+        [dir="rtl"] .pricing-card h3,
+        [dir="rtl"] .about-text h2,
+        [dir="rtl"] .contact-info h3,
+        [dir="rtl"] .faq-question h3 {
+            text-align: right;
+        }
+
+        [dir="rtl"] .logo {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .logo img {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+        [dir="rtl"] nav ul {
+            padding-right: 0;
+        }
+
+        [dir="rtl"] .about-content {
+            direction: rtl;
+        }
+
+        [dir="rtl"] .pricing-features li,
+        [dir="rtl"] .package-features li {
+            padding-left: 0;
+            padding-right: 25px;
+        }
+
+        [dir="rtl"] .pricing-features li::before,
+        [dir="rtl"] .package-features li::before {
+            left: auto;
+            right: 0;
+        }
+
+        [dir="rtl"] .faq-question {
+            flex-direction: row-reverse;
+        }
+
+        [dir="rtl"] .social-links,
+        [dir="rtl"] .hero-buttons {
+            direction: ltr;
+        }        
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            nav {
+                width: 100%;
+                order: 3;
+                margin-top: 20px;
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .auth-buttons {
+                margin-left: auto;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+
+            .currency-selector,
+            .language-switcher {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="NurQode Logo" style="height: 60px; margin-right: 10px;">
+                <h1>Nur<span>Qode</span></h1>
+            </div>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home" data-translate="home">Home</a></li>
+                    <li><a href="#services" data-translate="services">Services</a></li>
+                    <li><a href="#pricing" data-translate="pricing">Pricing</a></li>
+                    <li><a href="#about" data-translate="about">About</a></li>
+                    <li><a href="#contact" data-translate="contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="currency-selector">
+                <span>Currency:</span>
+                <select id="currency-select">
+                    <option value="USD">USA (USD)</option>
+                    <option value="CAD">Canada (CAD)</option>
+                    <option value="QAR">Qatar (QAR)</option>
+                    <option value="AED">UAE (AED)</option>
+                    <option value="SAR">Saudi Arabia (SAR)</option>
+                    <option value="KWD">Kuwait (KWD)</option>
+                    <option value="OMR">Oman (OMR)</option>
+                    <option value="BHD">Bahrain (BHD)</option>
+                    <option value="LBP">Lebanon (LBP)</option>
+                    <option value="TRY">Turkey (TRY)</option>
+                    <option value="JOD">Jordan (JOD)</option>
+                </select>
+            </div>
+            
+            <div class="language-switcher">
+                <span>Language: </span>
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
+
+            <div class="auth-buttons">
+                <button class="btn btn-outline" id="login-btn">Login</button>
+                <button class="btn" id="signup-btn">Sign Up</button>
+                <div id="user-welcome" style="display: none;">
+                    <span style="color: var(--accent); margin-right: 15px;" id="welcome-text"></span>
+                    <button class="btn btn-outline" id="logout-btn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1 data-translate="heroTitle" data-html="true">Premium Web Solutions for the <span>Middle East and North America</span></h1>
+            <p data-translate="heroSubtitle">NurQode delivers exceptional web development services tailored for businesses across the Middle East and North America. From Qatar to Canada, we build digital experiences that drive growth.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn" data-translate="ourServices">Our Services</a>
+                <a href="#contact" class="btn btn-outline" data-translate="getInTouch">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-translate="servicesTitle">Our Services</h2>
+                <p data-translate="servicesSubtitle">Comprehensive web development solutions for your business</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 data-translate="customWeb">Custom Web Development</h3>
+                    <p data-translate="customWebDesc">Tailored websites built with the latest technologies to meet your specific business requirements.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 data-translate="ecommerce">E-Commerce Solutions</h3>
+                    <p data-translate="ecommerceDesc">Robust online stores with secure payment gateways optimized for the Middle Eastern and North American markets.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 data-translate="responsive">Responsive Design</h3>
+                    <p data-translate="responsiveDesc">Websites that look and function perfectly on all devices, from desktop to mobile.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 data-translate="seo">SEO Optimization</h3>
+                    <p data-translate="seoDesc">Improve your search engine rankings and increase visibility to potential customers.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 data-translate="maintenance">Website Maintenance</h3>
+                    <p data-translate="maintenanceDesc">Ongoing support and updates to keep your website secure and performing at its best.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 data-translate="consulting">Consulting</h3>
+                    <p data-translate="consultingDesc">Expert advice on digital strategy and how to maximize your online presence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-translate="pricingTitle">Pricing Plans</h2>
+                <p data-translate="pricingSubtitle">Flexible packages to suit businesses of all sizes</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 data-translate="starterPlan">Starter</h3>
+                    <div class="price" data-base="499">
+                        <span class="price-amount">499</span>
+                        <span class="currency-symbol">$</span>
+                        <span class="currency-code">USD</span>
+                    </div>
+                    <p data-translate="starterDesc">Perfect for small businesses and startups</p>
+                    <ul class="pricing-features">
+                        <li data-translate="feature1">5 Page Website</li>
+                        <li data-translate="feature2">Responsive Design</li>
+                        <li data-translate="feature3">Basic SEO Setup</li>
+                        <li data-translate="feature4">Contact Form</li>
+                        <li data-translate="feature5">1 Month Support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" data-translate="getStarted">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3 data-translate="proPlan">Professional</h3>
+                    <div class="price" data-base="999">
+                        <span class="price-amount">999</span>
+                        <span class="currency-symbol">$</span>
+                        <span class="currency-code">USD</span>
+                    </div>
+                    <p data-translate="proDesc">Our most popular package for growing businesses</p>
+                    <ul class="pricing-features">
+                        <li data-translate="feature6">10 Page Website</li>
+                        <li data-translate="feature7">E-Commerce Functionality</li>
+                        <li data-translate="feature8">Advanced SEO</li>
+                        <li data-translate="feature9">Social Media Integration</li>
+                        <li data-translate="feature10">3 Months Support</li>
+                        <li data-translate="feature11">Content Management System</li>
+                    </ul>
+                    <a href="#contact" class="btn" data-translate="getStarted">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 data-translate="enterprisePlan">Enterprise</h3>
+                    <div class="price" data-base="1999">
+                        <span class="price-amount">1999</span>
+                        <span class="currency-symbol">$</span>
+                        <span class="currency-code">USD</span>
+                    </div>
+                    <p data-translate="enterpriseDesc">Comprehensive solution for large organizations</p>
+                    <ul class="pricing-features">
+                        <li data-translate="feature12">Unlimited Pages</li>
+                        <li data-translate="feature13">Custom Web Applications</li>
+                        <li data-translate="feature14">Multi-language Support</li>
+                        <li data-translate="feature15">Priority Support</li>
+                        <li data-translate="feature16">6 Months Support</li>
+                        <li data-translate="feature17">Advanced Analytics</li>
+                        <li data-translate="feature18">Dedicated Account Manager</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" data-translate="getStarted">Get Started</a>
+                </div>
+            </div>
+            <div class="exchange-notice" style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #666;">
+                <p><i class="fas fa-info-circle"></i> <span data-translate="exchangeNotice">Prices are converted using current exchange rates. Actual amounts may vary.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 data-translate="aboutTitle">About NurQode</h2>
+                    <p data-translate="aboutDesc1">NurQode was founded with a vision to provide premium web development services across the Middle East and North America. Our name combines "Nur" (light in Arabic) with "Qode" (code), representing our mission to illuminate the digital landscape with exceptional coding solutions.</p>
+                    <p data-translate="aboutDesc2">With teams across multiple countries in the region, we understand the unique needs and preferences of Middle Eastern and North American businesses. Our developers are skilled in creating websites that not only look stunning but also perform exceptionally in local markets.</p>
+                    <p data-translate="aboutDesc3">We pride ourselves on delivering projects on time, within budget, and exceeding client expectations. Our commitment to quality and customer satisfaction has made us a trusted partner for businesses from Qatar to Canada.</p>
+                    <a href="#contact" class="btn" data-translate="contactUs">Contact Us</a>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder for about image -->
+                    <div style="width: 100%; height: 400px; background: var(--gradient); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                        <span data-translate="teamText">NurQode Team</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-translate="faqTitle">Frequently Asked Questions</h2>
+                <p data-translate="faqSubtitle">Get answers to common questions about our web development services</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-translate="faq1">How long does it take to build a website?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq1Answer">Typically, our projects take 2-6 weeks depending on complexity. A basic 5-page website takes about 2-3 weeks, while e-commerce sites or custom web applications may take 4-6 weeks.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-translate="faq2">Do you provide website maintenance after launch?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq2Answer">Yes! We offer various <a href="maintenance-packages.html" style="color: var(--accent); text-decoration: none; font-weight: 600;" data-translate="maintenancePackages">maintenance packages</a> to keep your website secure, updated, and performing optimally. All our pricing plans include initial support, and we offer ongoing maintenance contracts.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-translate="faq3">Can you work with businesses outside the Middle East and North America?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq3Answer">While we specialize in Middle Eastern and North American markets, we welcome clients from around the world. Our team is fluent in English and Arabic, and we've successfully delivered projects for international clients.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-translate="faq4">What technologies do you use for web development?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq4Answer">We use modern technologies including HTML5, CSS3, JavaScript, React, Node.js, and various CMS platforms. We choose the best technology stack based on your specific project requirements.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-translate="faq5">Do you offer custom web applications?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-translate="faq5Answer">Absolutely! Our Enterprise package includes custom web application development. We build tailored solutions for businesses needing specific functionality beyond standard websites.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-translate="contactTitle">Contact Us</h2>
+                <p data-translate="contactSubtitle">Get in touch to discuss your project</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 data-translate="conversationTitle">Let's Start a Conversation</h3>
+                    <p data-translate="conversationDesc">Ready to take your online presence to the next level? Contact us today for a free consultation and quote.</p>
+                    <p><i class="fas fa-envelope"></i> info@nurqode.com</p>
+                    <p><i class="fas fa-phone"></i> +974 1234 5678 (Qatar Office)</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-translate="officesText">Offices in Doha, Dubai, Riyadh, and Istanbul</span></p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-translate="fullName">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-translate="emailAddress">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <!-- Phone Number Field - Now Required -->
+                        <div class="form-group">
+                            <label for="phone" data-translate="phoneNumber">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="+1234567890" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="country" data-translate="selectCountry">Country</label>
+                            <select id="country" required>
+                                <option value="" data-translate="selectCountryOption">Select your country</option>
+                                <option value="USA" data-translate="usaOption">United States</option>
+                                <option value="Canada" data-translate="canadaOption">Canada</option>                                
+                                <option value="Qatar" data-translate="qatarOption">Qatar</option>
+                                <option value="UAE" data-translate="uaeOption">UAE</option>
+                                <option value="Saudi Arabia" data-translate="saudiOption">Saudi Arabia</option>
+                                <option value="Kuwait" data-translate="kuwaitOption">Kuwait</option>
+                                <option value="Oman" data-translate="omanOption">Oman</option>
+                                <option value="Bahrain" data-translate="bahrainOption">Bahrain</option>
+                                <option value="Lebanon" data-translate="lebanonOption">Lebanon</option>
+                                <option value="Turkey" data-translate="turkeyOption">Turkey</option>
+                                <option value="Jordan" data-translate="jordanOption">Jordan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-translate="projectDetails">Project Details</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" data-translate="sendMessage">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 data-translate="companyName">NurQode</h3>
+                    <p data-translate="companyDesc">Premium web development solutions for the Middle East and North America. Building digital experiences that drive growth.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 data-translate="quickLinks">Quick Links</h3>
+                    <ul>
+                        <li><a href="#home" data-translate="home">Home</a></li>
+                        <li><a href="#services" data-translate="services">Services</a></li>
+                        <li><a href="#pricing" data-translate="pricing">Pricing</a></li>
+                        <li><a href="#about" data-translate="about">About</a></li>
+                        <li><a href="#contact" data-translate="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-translate="servicesTitle">Services</h3>
+                    <ul>
+                        <li><a href="#" data-translate="customWeb">Web Development</a></li>
+                        <li><a href="#" data-translate="ecommerce">E-Commerce</a></li>
+                        <li><a href="#" data-translate="seo">SEO Optimization</a></li>
+                        <li><a href="#" data-translate="maintenance">Website Maintenance</a></li>
+                        <li><a href="#" data-translate="consulting">Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-translate="contactInfo">Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@nurqode.com</li>
+                        <li><i class="fas fa-phone"></i> +974 1234 5678</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span data-translate="dohaQatar">Doha, Qatar</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 <span data-translate="companyName">NurQode</span>. <span data-translate="allRights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 data-translate="loginTitle">Login to Your Account</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email" data-translate="emailAddress">Email Address</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password" data-translate="password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn" data-translate="login">Login</button>
+            </form>
+            <div class="modal-footer">
+                <p data-translate="noAccount">Don't have an account? <a href="#" id="switch-to-signup" data-translate="signup">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 data-translate="signupTitle">Create an Account</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name" data-translate="fullName">Full Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email" data-translate="emailAddress">Email Address</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password" data-translate="password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-country" data-translate="selectCountry">Country</label>
+                    <select id="signup-country" required>
+                        <option value="" data-translate="selectCountryOption">Select your country</option>
+                        <option value="USA" data-translate="usaOption">United States</option>
+                        <option value="Canada" data-translate="canadaOption">Canada</option>
+                        <option value="Qatar" data-translate="qatarOption">Qatar</option>
+                        <option value="UAE" data-translate="uaeOption">UAE</option>
+                        <option value="Saudi Arabia" data-translate="saudiOption">Saudi Arabia</option>
+                        <option value="Kuwait" data-translate="kuwaitOption">Kuwait</option>
+                        <option value="Oman" data-translate="omanOption">Oman</option>
+                        <option value="Bahrain" data-translate="bahrainOption">Bahrain</option>
+                        <option value="Lebanon" data-translate="lebanonOption">Lebanon</option>
+                        <option value="Turkey" data-translate="turkeyOption">Turkey</option>
+                        <option value="Jordan" data-translate="jordanOption">Jordan</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" data-translate="signup">Sign Up</button>
+            </form>
+            <div class="modal-footer">
+                <p data-translate="haveAccount">Already have an account? <a href="#" id="switch-to-login" data-translate="login">Login</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Real exchange rates (approximate values as of early 2024)
+        const exchangeRates = {
+            'USD': 1,       // US Dollar
+            'CAD': 1.35,    // Canadian Dollar
+            'QAR': 3.64,    // Qatar Riyal
+            'AED': 3.67,    // UAE Dirham
+            'SAR': 3.75,    // Saudi Riyal
+            'KWD': 0.31,    // Kuwaiti Dinar
+            'OMR': 0.38,    // Omani Rial
+            'BHD': 0.38,    // Bahraini Dinar
+            'LBP': 1507.5,  // Lebanese Pound
+            'TRY': 30.5,    // Turkish Lira
+            'JOD': 0.71     // Jordanian Dinar
+        };
+
+        // Currency formatting
+        const currencyFormats = {
+            'USD': { symbol: '$', position: 'before', decimal: 0 },
+            'CAD': { symbol: 'C$', position: 'before', decimal: 0 },
+            'QAR': { symbol: 'QR', position: 'before', decimal: 0 },
+            'AED': { symbol: 'AED', position: 'before', decimal: 0 },
+            'SAR': { symbol: 'SR', position: 'before', decimal: 0 },
+            'KWD': { symbol: 'KD', position: 'before', decimal: 3 },
+            'OMR': { symbol: 'OMR', position: 'before', decimal: 3 },
+            'BHD': { symbol: 'BD', position: 'before', decimal: 3 },
+            'LBP': { symbol: 'LBP', position: 'after', decimal: 0 },
+            'TRY': { symbol: '₺', position: 'before', decimal: 0 },
+            'JOD': { symbol: 'JD', position: 'before', decimal: 3 }
+        };
+
+        // DOM Elements
+        const currencySelect = document.getElementById('currency-select');
+        const priceElements = document.querySelectorAll('.price');
+        const loginBtn = document.getElementById('login-btn');
+        const signupBtn = document.getElementById('signup-btn');
+        const loginModal = document.getElementById('login-modal');
+        const signupModal = document.getElementById('signup-modal');
+        const closeModals = document.querySelectorAll('.close-modal');
+        const switchToSignup = document.getElementById('switch-to-signup');
+        const switchToLogin = document.getElementById('switch-to-login');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('nav');
+
+        // Update prices based on selected currency with real conversion
+        function updatePrices() {
+            const selectedCurrency = currencySelect.value;
+            const rate = exchangeRates[selectedCurrency];
+            const format = currencyFormats[selectedCurrency];
+            
+            priceElements.forEach(priceElement => {
+                const basePrice = parseFloat(priceElement.getAttribute('data-base'));
+                const convertedPrice = (basePrice * rate);
+                
+                // Format the price based on currency requirements
+                let formattedPrice;
+                if (format.decimal === 0) {
+                    formattedPrice = Math.round(convertedPrice).toLocaleString();
+                } else {
+                    formattedPrice = convertedPrice.toFixed(format.decimal);
+                }
+                
+                // Update the price display
+                const priceAmount = priceElement.querySelector('.price-amount');
+                const currencySymbol = priceElement.querySelector('.currency-symbol');
+                const currencyCode = priceElement.querySelector('.currency-code');
+                
+                priceAmount.textContent = formattedPrice;
+                currencySymbol.textContent = format.symbol;
+                currencyCode.textContent = selectedCurrency;
+                
+                // Adjust symbol position if needed
+                if (format.position === 'after') {
+                    priceElement.innerHTML = `
+                        <span class="price-amount">${formattedPrice}</span>
+                        <span class="currency-symbol">${format.symbol}</span>
+                        <span class="currency-code">${selectedCurrency}</span>
+                    `;
+                }
+            });
+        }
+
+        // Modal functionality
+        function openModal(modal) {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAllModals() {
+            loginModal.style.display = 'none';
+            signupModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Event Listeners
+        currencySelect.addEventListener('change', updatePrices);
+
+        loginBtn.addEventListener('click', () => openModal(loginModal));
+        signupBtn.addEventListener('click', () => openModal(signupModal));
+
+        closeModals.forEach(closeBtn => {
+            closeBtn.addEventListener('click', closeAllModals);
+        });
+
+        switchToSignup.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginModal.style.display = 'none';
+            signupModal.style.display = 'flex';
+        });
+
+        switchToLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            signupModal.style.display = 'none';
+            loginModal.style.display = 'flex';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal || e.target === signupModal) {
+                closeAllModals();
+            }
+        });
+
+        // Mobile menu toggle
+        mobileMenu.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Form submissions
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const loginData = {
+            email: document.getElementById('login-email').value,
+            password: document.getElementById('login-password').value
+        };
+
+        try {
+            const response = await fetch('http://localhost:5000/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(loginData)
+            });
+
+            const result = await response.json();
+            
+            if (response.ok) {
+                alert('Login successful!');
+                // Store the token for future requests
+                localStorage.setItem('token', result.token);
+                localStorage.setItem('user', JSON.stringify(result.user));
+                closeAllModals();
+                checkUserSession();
+            } else {
+            alert('Login failed: ' + result.message);
+            }
+        } catch (error) {
+            alert('Network error. Please try again.');
+        }
+        });
+
+        document.getElementById('signup-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const signupData = {
+            name: document.getElementById('signup-name').value,
+            email: document.getElementById('signup-email').value,
+            password: document.getElementById('signup-password').value,
+            country: document.getElementById('signup-country').value
+        };
+
+        try {
+            const response = await fetch('http://localhost:5000/api/auth/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(signupData)
+            });
+
+            const result = await response.json();
+            
+            if (response.ok) {
+                alert('Account created successfully!');
+                // Store the token for future requests
+                localStorage.setItem('token', result.token);
+                localStorage.setItem('user', JSON.stringify(result.user));
+                closeAllModals();
+                checkUserSession();
+            } else {
+            alert('Signup failed: ' + result.message);
+            }
+        } catch (error) {
+            alert('Network error. Please try again.');
+        }
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            country: document.getElementById('country').value,
+            message: document.getElementById('message').value
+        };
+
+        try {
+            const response = await fetch('http://localhost:5000/api/contact/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+            
+            if (response.ok) {
+            alert('Thank you for your message! We will get back to you soon.');
+            document.getElementById('contactForm').reset();
+            } else {
+            alert('Error: ' + result.message);
+            }
+        } catch (error) {
+            alert('Network error. Please try again.');
+        }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                nav.classList.remove('active');
+            });
+        });
+
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Language Support
+        const translations = {
+            en: {
+                // Navigation
+                'home': 'Home',
+                'services': 'Services',
+                'pricing': 'Pricing',
+                'about': 'About',
+                'contact': 'Contact',
+                
+                // Hero Section
+                'heroTitle': 'Premium Web Solutions for the <span>Middle East and North America</span>',
+                'heroSubtitle': 'NurQode delivers exceptional web development services tailored for businesses across the Middle East and North America. From Qatar to Canada, we build digital experiences that drive growth.',
+                'ourServices': 'Our Services',
+                'getInTouch': 'Get In Touch',
+                
+                // Services Section
+                'servicesTitle': 'Our Services',
+                'servicesSubtitle': 'Comprehensive web development solutions for your business',
+                'customWeb': 'Custom Web Development',
+                'customWebDesc': 'Tailored websites built with the latest technologies to meet your specific business requirements.',
+                'ecommerce': 'E-Commerce Solutions',
+                'ecommerceDesc': 'Robust online stores with secure payment gateways optimized for the Middle Eastern and North American markets.',
+                'responsive': 'Responsive Design',
+                'responsiveDesc': 'Websites that look and function perfectly on all devices, from desktop to mobile.',
+                'seo': 'SEO Optimization',
+                'seoDesc': 'Improve your search engine rankings and increase visibility to potential customers.',
+                'maintenance': 'Website Maintenance',
+                'maintenanceDesc': 'Ongoing support and updates to keep your website secure and performing at its best.',
+                'consulting': 'Consulting',
+                'consultingDesc': 'Expert advice on digital strategy and how to maximize your online presence.',
+                
+                // Pricing Section
+                'pricingTitle': 'Pricing Plans',
+                'pricingSubtitle': 'Flexible packages to suit businesses of all sizes',
+                'starterPlan': 'Starter',
+                'starterDesc': 'Perfect for small businesses and startups',
+                'proPlan': 'Professional',
+                'proDesc': 'Our most popular package for growing businesses',
+                'enterprisePlan': 'Enterprise',
+                'enterpriseDesc': 'Comprehensive solution for large organizations',
+                
+                // Features
+                'feature1': '5 Page Website',
+                'feature2': 'Responsive Design',
+                'feature3': 'Basic SEO Setup',
+                'feature4': 'Contact Form',
+                'feature5': '1 Month Support',
+                'feature6': '10 Page Website',
+                'feature7': 'E-Commerce Functionality',
+                'feature8': 'Advanced SEO',
+                'feature9': 'Social Media Integration',
+                'feature10': '3 Months Support',
+                'feature11': 'Content Management System',
+                'feature12': 'Unlimited Pages',
+                'feature13': 'Custom Web Applications',
+                'feature14': 'Multi-language Support',
+                'feature15': 'Priority Support',
+                'feature16': '6 Months Support',
+                'feature17': 'Advanced Analytics',
+                'feature18': 'Dedicated Account Manager',
+                
+                'getStarted': 'Get Started',
+                'exchangeNotice': 'Prices are converted using current exchange rates. Actual amounts may vary.',
+                
+                // About Section
+                'aboutTitle': 'About NurQode',
+                'aboutDesc1': 'NurQode was founded with a vision to provide premium web development services across the Middle East and North America. Our name combines "Nur" (light in Arabic) with "Qode" (code), representing our mission to illuminate the digital landscape with exceptional coding solutions.',
+                'aboutDesc2': 'With teams across multiple countries in the region, we understand the unique needs and preferences of Middle Eastern and North American businesses. Our developers are skilled in creating websites that not only look stunning but also perform exceptionally in local markets.',
+                'aboutDesc3': 'We pride ourselves on delivering projects on time, within budget, and exceeding client expectations. Our commitment to quality and customer satisfaction has made us a trusted partner for businesses from Qatar to Canada.',
+                'contactUs': 'Contact Us',
+                'teamText': 'NurQode Team',
+                
+                // FAQ Section
+                'faqTitle': 'Frequently Asked Questions',
+                'faqSubtitle': 'Get answers to common questions about our web development services',
+                'faq1': 'How long does it take to build a website?',
+                'faq1Answer': 'Typically, our projects take 2-6 weeks depending on complexity. A basic 5-page website takes about 2-3 weeks, while e-commerce sites or custom web applications may take 4-6 weeks.',
+                'faq2': 'Do you provide website maintenance after launch?',
+                'faq2Answer': 'Yes! We offer various maintenance packages to keep your website secure, updated, and performing optimally. All our pricing plans include initial support, and we offer ongoing maintenance contracts.',
+                'faq3': 'Can you work with businesses outside the Middle East and North America?',
+                'faq3Answer': 'While we specialize in Middle Eastern and North American markets, we welcome clients from around the world. Our team is fluent in English and Arabic, and we\'ve successfully delivered projects for international clients.',
+                'faq4': 'What technologies do you use for web development?',
+                'faq4Answer': 'We use modern technologies including HTML5, CSS3, JavaScript, React, Node.js, and various CMS platforms. We choose the best technology stack based on your specific project requirements.',
+                'faq5': 'Do you offer custom web applications?',
+                'faq5Answer': 'Absolutely! Our Enterprise package includes custom web application development. We build tailored solutions for businesses needing specific functionality beyond standard websites.',
+                'maintenancePackages': 'maintenance packages',
+                
+                // Contact Section
+                'contactTitle': 'Contact Us',
+                'contactSubtitle': 'Get in touch to discuss your project',
+                'conversationTitle': 'Let\'s Start a Conversation',
+                'conversationDesc': 'Ready to take your online presence to the next level? Contact us today for a free consultation and quote.',
+                'officesText': 'Offices in Doha, Dubai, Riyadh, and Istanbul',
+                
+                // Form Labels
+                'fullName': 'Full Name',
+                'emailAddress': 'Email Address',
+                'phoneNumber': 'Phone Number',
+                'selectCountry': 'Country',
+                'selectCountryOption': 'Select your country',
+                'projectDetails': 'Project Details',
+                'sendMessage': 'Send Message',
+                
+                // Country Options
+                'usaOption': 'United States',
+                'canadaOption': 'Canada',
+                'qatarOption': 'Qatar',
+                'uaeOption': 'UAE',
+                'saudiOption': 'Saudi Arabia',
+                'kuwaitOption': 'Kuwait',
+                'omanOption': 'Oman',
+                'bahrainOption': 'Bahrain',
+                'lebanonOption': 'Lebanon',
+                'turkeyOption': 'Turkey',
+                'jordanOption': 'Jordan',
+                
+                // Footer
+                'companyName': 'NurQode',
+                'companyDesc': 'Premium web development solutions for the Middle East and North America. Building digital experiences that drive growth.',
+                'quickLinks': 'Quick Links',
+                'contactInfo': 'Contact Info',
+                'dohaQatar': 'Doha, Qatar',
+                'allRights': 'All rights reserved.',
+                
+                // Modals
+                'loginTitle': 'Login to Your Account',
+                'password': 'Password',
+                'login': 'Login',
+                'noAccount': 'Don\'t have an account?',
+                'signup': 'Sign up',
+                'signupTitle': 'Create an Account',
+                'haveAccount': 'Already have an account?'
+            },
+            ar: {
+                // Navigation
+                'home': 'الرئيسية',
+                'services': 'خدماتنا',
+                'pricing': 'الأسعار',
+                'about': 'من نحن',
+                'contact': 'اتصل بنا',
+                
+                // Hero Section
+                'heroTitle': 'حلوب ويب متميزة <span>لشرق الأوسط وأمريكا الشمالية</span>',
+                'heroSubtitle': 'تقدم نوركود خدمات تطوير ويب استثنائية مصممة خصيصًا للشركات في جميع أنحاء الشرق الأوسط وأمريكا الشمالية. من قطر إلى كندا، نبني تجارب رقمية تعزز النمو.',
+                'ourServices': 'خدماتنا',
+                'getInTouch': 'اتصل بنا',
+                
+                // Services Section
+                'servicesTitle': 'خدماتنا',
+                'servicesSubtitle': 'حلول شاملة لتطوير الويب لعملك',
+                'customWeb': 'تطوير ويب مخصص',
+                'customWebDesc': 'مواقع ويب مصممة خصيصًا باستخدام أحدث التقنيات لتلبية متطلبات عملك المحددة.',
+                'ecommerce': 'حلول التجارة الإلكترونية',
+                'ecommerceDesc': 'متاجر إلكترونية قوية مع بوابات دفع آمنة ومحسنة لسوق الشرق الأوسط وأمريكا الشمالية.',
+                'responsive': 'تصميم متجاوب',
+                'responsiveDesc': 'مواقع ويب تبدو وتعمل بشكل مثالي على جميع الأجهزة، من سطح المكتب إلى الهاتف المحمول.',
+                'seo': 'تحسين محركات البحث',
+                'seoDesc': 'حسّن ترتيب موقعك في محركات البحث وزد من ظهوره للعملاء المحتملين.',
+                'maintenance': 'صيانة المواقع',
+                'maintenanceDesc': 'دعم وتحديثات مستمرة للحفاظ على أمان موقعك وأدائه بأفضل صورة.',
+                'consulting': 'استشارات',
+                'consultingDesc': 'نصائح خبراء حول الاستراتيجية الرقمية وكيفية تعظيم وجودك على الإنترنت.',
+                
+                // Pricing Section
+                'pricingTitle': 'خطط الأسعار',
+                'pricingSubtitle': 'باقات مرنة تناسب الشركات من جميع الأحجام',
+                'starterPlan': 'البداية',
+                'starterDesc': 'مثالي للشركات الصغيرة والشركات الناشئة',
+                'proPlan': 'المحترف',
+                'proDesc': 'الباقة الأكثر شعبية للشركات النامية',
+                'enterprisePlan': 'المؤسسة',
+                'enterpriseDesc': 'حل شامل للمنظمات الكبيرة',
+                
+                // Features
+                'feature1': 'موقع ويب 5 صفحات',
+                'feature2': 'تصميم متجاوب',
+                'feature3': 'إعداد SEO أساسي',
+                'feature4': 'نموذج اتصال',
+                'feature5': 'دعم لمدة شهر',
+                'feature6': 'موقع ويب 10 صفحات',
+                'feature7': 'وظائف التجارة الإلكترونية',
+                'feature8': 'SEO متقدم',
+                'feature9': 'تكامل وسائل التواصل الاجتماعي',
+                'feature10': 'دعم لمدة 3 أشهر',
+                'feature11': 'نظام إدارة المحتوى',
+                'feature12': 'صفحات غير محدودة',
+                'feature13': 'تطبيقات ويب مخصصة',
+                'feature14': 'دعم متعدد اللغات',
+                'feature15': 'دعم مسبق',
+                'feature16': 'دعم لمدة 6 أشهر',
+                'feature17': 'تحليلات متقدمة',
+                'feature18': 'مدير حسابات مخصص',
+                
+                'getStarted': 'ابدأ الآن',
+                'exchangeNotice': 'يتم تحويل الأسعار باستخدام أسعار الصرف الحالية. قد تختلف المبالغ الفعلية.',
+                
+                // About Section
+                'aboutTitle': 'عن نوركود',
+                'aboutDesc1': 'تأسست نوركود برؤية لتقديم خدمات تطوير ويب متميزة في جميع أنحاء الشرق الأوسط وأمريكا الشمالية. يجمع اسمنا بين "نور" (الضوء بالعربية) و "كود" (الكود)، مما يمثل مهمتنا في إضاءة المشهد الرقمي بحلول برمجية استثنائية.',
+                'aboutDesc2': 'مع فرق في عدة دول في المنطقة، نحن نتفهم الاحتياجات والتفضيلات الفريدة للشركات في الشرق الأوسط وأمريكا الشمالية. مطورونا ماهرون في إنشاء مواقع ويب لا تبدو مذهلة فحسب، بل تعمل أيضًا بشكل استثنائي في الأسواق المحلية.',
+                'aboutDesc3': 'نفخر بتسليم المشاريع في الوقت المحدد، ضمن الميزانية، وتجاوز توقعات العملاء. التزامنا بالجودة ورضا العملاء جعلنا شريكًا موثوقًا للشركات من قطر إلى كندا.',
+                'contactUs': 'اتصل بنا',
+                'teamText': 'فريق نوركود',
+                
+                // FAQ Section
+                'faqTitle': 'الأسئلة الشائعة',
+                'faqSubtitle': 'احصل على إجابات للأسئلة الشائعة حول خدمات تطوير الويب لدينا',
+                'faq1': 'كم من الوقت يستغرق بناء موقع ويب؟',
+                'faq1Answer': 'عادةً ما تستغرق مشاريعنا من 2 إلى 6 أسابيع depending على التعقيد. يستغرق موقع الويب الأساسي المكون من 5 صفحات حوالي 2-3 أسابيع، بينما قد تستغرق مواقع التجارة الإلكترونية أو تطبيقات الويب المخصصة 4-6 أسابيع.',
+                'faq2': 'هل تقدمون صيانة للموقع بعد الإطلاق؟',
+                'faq2Answer': 'نعم! نقدم various maintenance packages للحفاظ على أمان موقعك وتحديثه وأدائه بشكل مثالي. تتضمن جميع خطط التسعير لدينا الدعم الأولي، ونقدم عقود صيانة مستمرة.',
+                'faq3': 'هل يمكنكم العمل مع الشركات خارج الشرق الأوسط وأمريكا الشمالية؟',
+                'faq3Answer': 'بينما نتخصص في أسواق الشرق الأوسط وأمريكا الشمالية، نرحب بالعملاء من جميع أنحاء العالم. فريقنا يجيد الإنجليزية والعربية، وقمنا بتسليم مشاريع بنجاح للعملاء الدوليين.',
+                'faq4': 'ما التقنيات التي تستخدمونها لتطوير الويب؟',
+                'faq4Answer': 'نستخدم التقنيات الحديثة بما في ذلك HTML5 و CSS3 و JavaScript و React و Node.js ومنصات CMS المختلفة. نختار أفضل مجموعة تقنية بناءً على متطلبات مشروعك المحددة.',
+                'faq5': 'هل تقدمون تطبيقات ويب مخصصة؟',
+                'faq5Answer': 'بالتأكيد! تتضمن باقة المؤسسة تطوير تطبيقات الويب المخصصة. نبني حلولاً مصممة خصيصًا للشركات التي تحتاج إلى وظائف محددة beyond beyond beyond المواقع القياسية.',
+                'maintenancePackages': 'باقات الصيانة',
+                
+                // Contact Section
+                'contactTitle': 'اتصل بنا',
+                'contactSubtitle': 'تواصل معنا لمناقشة مشروعك',
+                'conversationTitle': 'لنبدأ محادثة',
+                'conversationDesc': 'مستعد لرفع وجودك على الإنترنت إلى المستوى التالي؟ اتصل بنا اليوم للحصول على استشارة مجانية وعرض سعر.',
+                'officesText': 'مكاتب في الدوحة، دبي، الرياض، وإسطنبول',
+                
+                // Form Labels
+                'fullName': 'الاسم الكامل',
+                'emailAddress': 'البريد الإلكتروني',
+                'phoneNumber': 'رقم الهاتف',
+                'selectCountry': 'البلد',
+                'selectCountryOption': 'اختر بلدك',
+                'projectDetails': 'تفاصيل المشروع',
+                'sendMessage': 'إرسال الرسالة',
+                
+                // Country Options
+                'usaOption': 'الولايات المتحدة',
+                'canadaOption': 'كندا',
+                'qatarOption': 'قطر',
+                'uaeOption': 'الإمارات',
+                'saudiOption': 'السعودية',
+                'kuwaitOption': 'الكويت',
+                'omanOption': 'عمان',
+                'bahrainOption': 'البحرين',
+                'lebanonOption': 'لبنان',
+                'turkeyOption': 'تركيا',
+                'jordanOption': 'الأردن',
+                
+                // Footer
+                'companyName': 'نوركود',
+                'companyDesc': 'حلول تطوير ويب متميزة للشرق الأوسط وأمريكا الشمالية. بناء تجارب رقمية تعزز النمو.',
+                'quickLinks': 'روابط سريعة',
+                'contactInfo': 'معلومات الاتصال',
+                'dohaQatar': 'الدوحة، قطر',
+                'allRights': 'جميع الحقوق محفوظة.',
+                
+                // Modals
+                'loginTitle': 'تسجيل الدخول إلى حسابك',
+                'password': 'كلمة المرور',
+                'login': 'تسجيل الدخول',
+                'noAccount': 'ليس لديك حساب؟',
+                'signup': 'اشتراك',
+                'signupTitle': 'إنشاء حساب',
+                'haveAccount': 'هل لديك حساب بالفعل؟'
+            }
+        };
+
+        // Language Switcher Functionality
+        const languageSelect = document.getElementById('language-select');
+
+        function switchLanguage(lang) {
+            // Update text direction
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.documentElement.lang = lang;
+            
+            // Update all translatable elements
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    if (element.hasAttribute('data-html')) {
+                        element.innerHTML = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+        }
+
+        // Event listener for language change
+        languageSelect.addEventListener('change', (e) => {
+            switchLanguage(e.target.value);
+        });
+
+        // Initialize language
+        switchLanguage('en');
+        
+        // Initialize prices on page load
+        updatePrices();
+
+        // User session management
+        function checkUserSession() {
+            const token = localStorage.getItem('token');
+            const user = localStorage.getItem('user');
+            
+            if (token && user) {
+                const userData = JSON.parse(user);
+                document.getElementById('login-btn').style.display = 'none';
+                document.getElementById('signup-btn').style.display = 'none';
+                document.getElementById('user-welcome').style.display = 'flex';
+                document.getElementById('welcome-text').textContent = `Welcome, ${userData.name}!`;
+            } else {
+                document.getElementById('login-btn').style.display = 'block';
+                document.getElementById('signup-btn').style.display = 'block';
+                document.getElementById('user-welcome').style.display = 'none';
+            }
+        }
+
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            checkUserSession();
+            alert('Logged out successfully!');
+        });
+
+        // Check session on page load
+        document.addEventListener('DOMContentLoaded', checkUserSession);
+
+        // Also check after login/signup (add to your existing login/signup success handlers)
+        // In both login and signup success, add: checkUserSession();        
+        
+    </script>
+</body>
+</html>
