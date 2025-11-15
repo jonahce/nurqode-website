@@ -764,26 +764,76 @@
             }
         }
 
-        @media (max-width: 768px) {
+       @media (max-width: 768px) {
     header {
-        padding: 10px 0;
+        padding: 12px 0;
     }
     
     .header-container {
         flex-wrap: nowrap;
         justify-content: space-between;
+        align-items: center;
     }
     
     .logo h1 {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .logo img {
-        height: 35px;
+        height: 30px;
         margin-right: 8px;
     }
     
+    /* Hide desktop nav, show mobile menu */
     nav {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: block;
+        font-size: 20px;
+        order: 2;
+    }
+    
+    /* Keep currency and language but make them smaller */
+    .currency-selector {
+        display: flex;
+        margin-left: 15px;
+        order: 3;
+    }
+    
+    .currency-selector span {
+        display: none;
+    }
+    
+    .currency-selector select {
+        width: 70px;
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+    
+    .language-switcher {
+        display: flex;
+        margin-left: 10px;
+        order: 4;
+    }
+    
+    .language-switcher span {
+        display: none;
+    }
+    
+    .language-switcher select {
+        width: 60px;
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+    
+    .auth-buttons {
+        display: none;
+    }
+    
+    /* Mobile menu when active */
+    .mobile-nav {
         position: fixed;
         top: 60px;
         left: 0;
@@ -792,35 +842,33 @@
         padding: 20px;
         display: none;
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        z-index: 1000;
     }
     
-    nav.active {
+    .mobile-nav.active {
         display: block;
     }
     
-    nav ul {
+    .mobile-nav ul {
         flex-direction: column;
         gap: 15px;
+        list-style: none;
     }
     
-    nav ul li {
+    .mobile-nav ul li {
         margin: 0;
+        text-align: center;
     }
     
-    .mobile-menu {
+    .mobile-nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
         display: block;
-        font-size: 20px;
+        padding: 10px;
     }
     
-    .currency-selector,
-    .language-switcher {
-        display: none;
-    }
-    
-    .auth-buttons {
-        display: none;
-    }
-    
+    /* Hero section adjustments */
     .hero {
         padding: 100px 0 60px;
     }
@@ -845,6 +893,7 @@
         padding: 10px 20px;
     }
     
+    /* Other sections */
     .section-title h2 {
         font-size: 1.8rem;
     }
@@ -869,7 +918,7 @@
     }
 }
 
-        @media (max-width: 576px) {
+@media (max-width: 576px) {
     .hero h1 {
         font-size: 1.6rem;
     }
@@ -886,6 +935,21 @@
     .container {
         width: 95%;
         padding: 0 15px;
+    }
+    
+    /* Even smaller header on very small screens */
+    .logo h1 {
+        font-size: 16px;
+    }
+    
+    .logo img {
+        height: 25px;
+    }
+    
+    .currency-selector select,
+    .language-switcher select {
+        width: 60px;
+        font-size: 11px;
     }
 }
 
@@ -923,6 +987,17 @@
             </div>
             
             <nav>
+                <ul>
+                    <li><a href="#home" data-translate="home">Home</a></li>
+                    <li><a href="#services" data-translate="services">Services</a></li>
+                    <li><a href="#pricing" data-translate="pricing">Pricing</a></li>
+                    <li><a href="#about" data-translate="about">About</a></li>
+                    <li><a href="#contact" data-translate="contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <nav class="mobile-nav">
                 <ul>
                     <li><a href="#home" data-translate="home">Home</a></li>
                     <li><a href="#services" data-translate="services">Services</a></li>
@@ -1503,6 +1578,28 @@
             nav.classList.toggle('active');
         });
 
+        // Mobile menu toggle
+        mobileMenu.addEventListener('click', () => {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking links
+        document.querySelectorAll('.mobile-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu
+                document.querySelector('.mobile-nav').classList.remove('active');
+            });
+        });
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
