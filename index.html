@@ -1117,7 +1117,7 @@
                 </div>
                 <div class="contact-form">
                     <!-- NETLIFY FORM - CHANGED -->
-                    <form id="contactForm" name="contact" netlify method="POST" data-netlify="true">
+                    <form id="contactForm" name="contact" netlify method="POST" data-netlify="true" onsubmit="setTimeout(function(){window.location.reload()},5000)">
                         <input type="hidden" name="form-name" value="contact">
                         <div class="form-group">
                             <label for="name" data-translate="fullName">Full Name</label>
