@@ -1299,13 +1299,7 @@
         // DOM Elements
         const currencySelect = document.getElementById('currency-select');
         const priceElements = document.querySelectorAll('.price');
-        const loginBtn = document.getElementById('login-btn');
-        const signupBtn = document.getElementById('signup-btn');
-        const loginModal = document.getElementById('login-modal');
-        const signupModal = document.getElementById('signup-modal');
         const closeModals = document.querySelectorAll('.close-modal');
-        const switchToSignup = document.getElementById('switch-to-signup');
-        const switchToLogin = document.getElementById('switch-to-login');
         const mobileMenu = document.querySelector('.mobile-menu');
         const nav = document.querySelector('nav');
 
@@ -1361,24 +1355,9 @@
 
         // Event Listeners
         currencySelect.addEventListener('change', updatePrices);
-
-        loginBtn.addEventListener('click', () => openModal(loginModal));
-        signupBtn.addEventListener('click', () => openModal(signupModal));
-
+        
         closeModals.forEach(closeBtn => {
             closeBtn.addEventListener('click', closeAllModals);
-        });
-
-        switchToSignup.addEventListener('click', (e) => {
-            e.preventDefault();
-            loginModal.style.display = 'none';
-            signupModal.style.display = 'flex';
-        });
-
-        switchToLogin.addEventListener('click', (e) => {
-            e.preventDefault();
-            signupModal.style.display = 'none';
-            loginModal.style.display = 'flex';
         });
 
         // Close modal when clicking outside
@@ -1394,76 +1373,6 @@
         });
 
         // Form submissions
-        document.getElementById('login-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const loginData = {
-            email: document.getElementById('login-email').value,
-            password: document.getElementById('login-password').value
-        };
-
-        try {
-            const response = await fetch('https://nurqode-backend-1.onrender.com/api/auth/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(loginData)
-            });
-
-            const result = await response.json();
-            
-            if (response.ok) {
-                alert('Login successful!');
-                // Store the token for future requests
-                localStorage.setItem('token', result.token);
-                localStorage.setItem('user', JSON.stringify(result.user));
-                closeAllModals();
-                checkUserSession();
-            } else {
-            alert('Login failed: ' + result.message);
-            }
-        } catch (error) {
-            alert('Network error. Please try again.');
-        }
-        });
-
-        document.getElementById('signup-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const signupData = {
-            name: document.getElementById('signup-name').value,
-            email: document.getElementById('signup-email').value,
-            password: document.getElementById('signup-password').value,
-            country: document.getElementById('signup-country').value
-        };
-
-        try {
-            const response = await fetch('https://nurqode-backend-1.onrender.com/api/auth/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(signupData)
-            });
-
-            const result = await response.json();
-            
-            if (response.ok) {
-                alert('Account created successfully!');
-                // Store the token for future requests
-                localStorage.setItem('token', result.token);
-                localStorage.setItem('user', JSON.stringify(result.user));
-                closeAllModals();
-                checkUserSession();
-            } else {
-            alert('Signup failed: ' + result.message);
-            }
-        } catch (error) {
-            alert('Network error. Please try again.');
-        }
-        });
-
         document.getElementById('contactForm').addEventListener('submit', async (e) => {
         e.preventDefault();
         
@@ -1821,39 +1730,7 @@
         switchLanguage('en');
         
         // Initialize prices on page load
-        updatePrices();
-
-        // User session management
-        function checkUserSession() {
-            const token = localStorage.getItem('token');
-            const user = localStorage.getItem('user');
-            
-            if (token && user) {
-                const userData = JSON.parse(user);
-                document.getElementById('login-btn').style.display = 'none';
-                document.getElementById('signup-btn').style.display = 'none';
-                document.getElementById('user-welcome').style.display = 'flex';
-                document.getElementById('welcome-text').textContent = `Welcome, ${userData.name}!`;
-            } else {
-                document.getElementById('login-btn').style.display = 'block';
-                document.getElementById('signup-btn').style.display = 'block';
-                document.getElementById('user-welcome').style.display = 'none';
-            }
-        }
-
-        // Logout functionality
-        document.getElementById('logout-btn').addEventListener('click', () => {
-            localStorage.removeItem('token');
-            localStorage.removeItem('user');
-            checkUserSession();
-            alert('Logged out successfully!');
-        });
-
-        // Check session on page load
-        document.addEventListener('DOMContentLoaded', checkUserSession);
-
-        // Also check after login/signup (add to your existing login/signup success handlers)
-        // In both login and signup success, add: checkUserSession();        
+        updatePrices();      
         
     </script>
 </body>
