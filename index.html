@@ -1093,7 +1093,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+       <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
@@ -1107,54 +1107,34 @@
                     <p><i class="fas fa-envelope"></i> nurqode@gmail.com</p>
                     <p><i class="fas fa-phone"></i> +974 3089 2590 (Qatar Office)</p>
                     <p><i class="fas fa-map-marker-alt"></i> <span data-translate="officesText">Offices in Doha, Dubai, Riyadh, and Istanbul</span></p>
+                </div>
+                
+                <!-- REPLACED FORM WITH SOCIAL MEDIA -->
+                <div class="contact-form" style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <h3 style="color: white; margin-bottom: 30px;">Reach Us Via Our Social Media Platforms</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 40px;">We're most responsive on these platforms. Click any button below to start a conversation!</p>
                     
-                <div class="social-links">
-                    <a href="https://www.facebook.com/share/1GvnxedaE7/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.tiktok.com/@nurqode" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://wa.me/97430892590" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="mailto:nurqode@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-                </div>
-                </div>
-                <div class="contact-form">
-                    <!-- NETLIFY FORM - CHANGED -->
-                    <form id="contactForm" name="contact" netlify method="POST" data-netlify="true" onsubmit="setTimeout(function(){window.location.reload()},5000)">
-                        <input type="hidden" name="form-name" value="contact">
-                        <div class="form-group">
-                            <label for="name" data-translate="fullName">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" data-translate="emailAddress">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <!-- Phone Number Field - Now Required -->
-                        <div class="form-group">
-                            <label for="phone" data-translate="phoneNumber">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+1234567890" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="country" data-translate="selectCountry">Country</label>
-                            <select id="country" name="country" required>
-                                <option value="" data-translate="selectCountryOption">Select your country</option>
-                                <option value="USA" data-translate="usaOption">United States</option>
-                                <option value="Canada" data-translate="canadaOption">Canada</option>                                
-                                <option value="Qatar" data-translate="qatarOption">Qatar</option>
-                                <option value="UAE" data-translate="uaeOption">UAE</option>
-                                <option value="Saudi Arabia" data-translate="saudiOption">Saudi Arabia</option>
-                                <option value="Kuwait" data-translate="kuwaitOption">Kuwait</option>
-                                <option value="Oman" data-translate="omanOption">Oman</option>
-                                <option value="Bahrain" data-translate="bahrainOption">Bahrain</option>
-                                <option value="Lebanon" data-translate="lebanonOption">Lebanon</option>
-                                <option value="Turkey" data-translate="turkeyOption">Turkey</option>
-                                <option value="Jordan" data-translate="jordanOption">Jordan</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" data-translate="projectDetails">Project Details</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn" data-translate="sendMessage">Send Message</button>
-                    </form>
+                    <div class="social-links" style="gap: 25px;">
+                        <a href="https://www.facebook.com/share/1GvnxedaE7/" target="_blank" style="width: 70px; height: 70px; font-size: 28px;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@nurqode" target="_blank" style="width: 70px; height: 70px; font-size: 28px;">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://wa.me/97430892590" target="_blank" style="width: 70px; height: 70px; font-size: 28px;">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:nurqode@gmail.com" target="_blank" style="width: 70px; height: 70px; font-size: 28px;">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    
+                    <div style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; max-width: 400px;">
+                        <p style="color: var(--accent); font-weight: 600; margin-bottom: 10px;">💬 Preferred Contact Methods</p>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 5px 0;">• WhatsApp: Fastest response</p>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 5px 0;">• Email: Detailed projects</p>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 5px 0;">• Social Media: Quick questions</p>
+                    </div>
                 </div>
             </div>
         </div>
