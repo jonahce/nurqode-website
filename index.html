@@ -1299,7 +1299,6 @@
         // DOM Elements
         const currencySelect = document.getElementById('currency-select');
         const priceElements = document.querySelectorAll('.price');
-        const closeModals = document.querySelectorAll('.close-modal');
         const mobileMenu = document.querySelector('.mobile-menu');
         const nav = document.querySelector('nav');
 
@@ -1341,24 +1340,9 @@
             });
         }
 
-        // Modal functionality
-        function openModal(modal) {
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeAllModals() {
-            loginModal.style.display = 'none';
-            signupModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
         // Event Listeners
         currencySelect.addEventListener('change', updatePrices);
         
-        closeModals.forEach(closeBtn => {
-            closeBtn.addEventListener('click', closeAllModals);
-        });
 
         // Close modal when clicking outside
         window.addEventListener('click', (e) => {
