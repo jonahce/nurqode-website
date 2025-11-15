@@ -1343,14 +1343,6 @@
         // Event Listeners
         currencySelect.addEventListener('change', updatePrices);
         
-
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target === loginModal || e.target === signupModal) {
-                closeAllModals();
-            }
-        });
-
         // Mobile menu toggle
         mobileMenu.addEventListener('click', () => {
             nav.classList.toggle('active');
