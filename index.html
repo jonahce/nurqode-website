@@ -729,246 +729,91 @@
             direction: ltr;
         }        
 
-        /* Responsive Styles - IMPROVED */
-        @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-        }
-
+        /* Responsive Styles */
         @media (max-width: 992px) {
             .about-content,
             .contact-container {
                 grid-template-columns: 1fr;
-                gap: 40px;
             }
 
             .about-image {
                 order: -1;
             }
-            
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            nav {
+                width: 100%;
+                order: 3;
+                margin-top: 20px;
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .auth-buttons {
+                margin-left: auto;
+            }
+
             .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .price {
                 font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+
+            .currency-selector,
+            .language-switcher {
+                margin-left: 0;
+                margin-top: 10px;
             }
         }
 
-       @media (max-width: 768px) {
-    header {
-        padding: 12px 0;
-    }
-    
-    .header-container {
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .logo h1 {
-        font-size: 18px;
-    }
-    
-    .logo img {
-        height: 30px;
-        margin-right: 8px;
-    }
-    
-    /* Hide desktop nav, show mobile menu */
-    nav {
-        display: none;
-    }
-    
-    .mobile-menu {
-        display: block;
-        font-size: 20px;
-        order: 2;
-    }
-    
-    /* Keep currency and language but make them smaller */
-    .currency-selector {
-        display: flex;
-        margin-left: 15px;
-        order: 3;
-    }
-    
-    .currency-selector span {
-        display: none;
-    }
-    
-    .currency-selector select {
-        width: 70px;
-        padding: 4px 8px;
-        font-size: 12px;
-    }
-    
-    .language-switcher {
-        display: flex;
-        margin-left: 10px;
-        order: 4;
-    }
-    
-    .language-switcher span {
-        display: none;
-    }
-    
-    .language-switcher select {
-        width: 60px;
-        padding: 4px 8px;
-        font-size: 12px;
-    }
-    
-    .auth-buttons {
-        display: none;
-    }
-    
-    /* Mobile menu when active */
-    .mobile-nav {
-        position: fixed;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: var(--primary);
-        padding: 20px;
-        display: none;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        z-index: 1000;
-    }
-    
-    .mobile-nav.active {
-        display: block;
-    }
-    
-    .mobile-nav ul {
-        flex-direction: column;
-        gap: 15px;
-        list-style: none;
-    }
-    
-    .mobile-nav ul li {
-        margin: 0;
-        text-align: center;
-    }
-    
-    .mobile-nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-        display: block;
-        padding: 10px;
-    }
-    
-    /* Hero section adjustments */
-    .hero {
-        padding: 100px 0 60px;
-    }
-    
-    .hero h1 {
-        font-size: 1.8rem;
-        line-height: 1.3;
-    }
-    
-    .hero p {
-        font-size: 1rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        gap: 12px;
-    }
-    
-    .hero-buttons .btn {
-        width: 100%;
-        max-width: 200px;
-        padding: 10px 20px;
-    }
-    
-    /* Other sections */
-    .section-title h2 {
-        font-size: 1.8rem;
-    }
-    
-    .services-grid,
-    .pricing-grid,
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .pricing-card.featured {
-        transform: none;
-    }
-    
-    .price {
-        font-size: 2.2rem;
-    }
-    
-    section {
-        padding: 50px 0;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero h1 {
-        font-size: 1.6rem;
-    }
-    
-    .section-title h2 {
-        font-size: 1.6rem;
-    }
-    
-    .service-card,
-    .pricing-card {
-        padding: 20px 15px;
-    }
-    
-    .container {
-        width: 95%;
-        padding: 0 15px;
-    }
-    
-    /* Even smaller header on very small screens */
-    .logo h1 {
-        font-size: 16px;
-    }
-    
-    .logo img {
-        height: 25px;
-    }
-    
-    .currency-selector select,
-    .language-switcher select {
-        width: 60px;
-        font-size: 11px;
-    }
-}
-
-        @media (max-width: 400px) {
-            .logo h1 {
-                font-size: 20px;
+        @media (max-width: 576px) {
+            .services-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
             }
-            
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
             .hero h1 {
-                font-size: 1.6rem;
-            }
-            
-            .price {
-                font-size: 1.8rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
+                font-size: 2rem;
             }
         }
     </style>
@@ -987,17 +832,6 @@
             </div>
             
             <nav>
-                <ul>
-                    <li><a href="#home" data-translate="home">Home</a></li>
-                    <li><a href="#services" data-translate="services">Services</a></li>
-                    <li><a href="#pricing" data-translate="pricing">Pricing</a></li>
-                    <li><a href="#about" data-translate="about">About</a></li>
-                    <li><a href="#contact" data-translate="contact">Contact</a></li>
-                </ul>
-            </nav>
-
-            <!-- Mobile Navigation -->
-            <nav class="mobile-nav">
                 <ul>
                     <li><a href="#home" data-translate="home">Home</a></li>
                     <li><a href="#services" data-translate="services">Services</a></li>
@@ -1032,11 +866,12 @@
                 </select>
             </div>
 
-            <div class="auth-buttons">
-                <!-- No buttons - clean header -->
-                <div id="user-welcome" style="display: none;">
-                    <span style="color: var(--accent); margin-right: 15px;" id="welcome-text"></span>
-                    <button class="btn btn-outline" id="logout-btn">Logout</button>
+                <div class="auth-buttons">
+                    <!-- No buttons - clean header -->
+                    <div id="user-welcome" style="display: none;">
+                        <span style="color: var(--accent); margin-right: 15px;" id="welcome-text"></span>
+                        <button class="btn btn-outline" id="logout-btn">Logout</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1108,7 +943,7 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
+            <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-title">
@@ -1320,7 +1155,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+       <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
@@ -1512,63 +1347,63 @@
         const nav = document.querySelector('nav');
 
         // Update prices based on selected currency with real conversion
-        function updatePrices() {
-            const selectedCurrency = currencySelect.value;
-            const rate = exchangeRates[selectedCurrency];
-            const format = currencyFormats[selectedCurrency];
-            
-            // Update package prices
-            priceElements.forEach(priceElement => {
-                const basePrice = parseFloat(priceElement.getAttribute('data-base'));
-                const convertedPrice = (basePrice * rate);
-                
-                // Format the price based on currency requirements
-                let formattedPrice;
-                if (format.decimal === 0) {
-                    formattedPrice = Math.round(convertedPrice).toLocaleString();
-                } else {
-                    formattedPrice = convertedPrice.toFixed(format.decimal);
-                }
-                
-                // Update the price display
-                const priceAmount = priceElement.querySelector('.price-amount');
-                const currencySymbol = priceElement.querySelector('.currency-symbol');
-                const currencyCode = priceElement.querySelector('.currency-code');
-                
-                priceAmount.textContent = formattedPrice;
-                currencySymbol.textContent = format.symbol;
-                currencyCode.textContent = selectedCurrency;
-                
-                // Adjust symbol position if needed
-                if (format.position === 'after') {
-                    priceElement.innerHTML = `
-                        <span class="price-amount">${formattedPrice}</span>
-                        <span class="currency-symbol">${format.symbol}</span>
-                        <span class="currency-code">${selectedCurrency}</span>
-                    `;
-                }
-            });
-            
-            // Update hosting prices
-            const hostingPriceElements = document.querySelectorAll('.hosting-price');
-            hostingPriceElements.forEach(element => {
-                const basePrice = parseFloat(element.getAttribute('data-base'));
-                const convertedPrice = (basePrice * rate);
-                
-                let formattedPrice;
-                if (format.decimal === 0) {
-                    formattedPrice = Math.round(convertedPrice);
-                } else {
-                    formattedPrice = convertedPrice.toFixed(format.decimal);
-                }
-                
-                if (format.position === 'after') {
-                    element.textContent = `Then ${formattedPrice}${format.symbol}/month hosting`;
-                } else {
-                    element.textContent = `Then ${format.symbol}${formattedPrice}/month hosting`;
-                }
-            });
+function updatePrices() {
+    const selectedCurrency = currencySelect.value;
+    const rate = exchangeRates[selectedCurrency];
+    const format = currencyFormats[selectedCurrency];
+    
+    // Update package prices
+    priceElements.forEach(priceElement => {
+        const basePrice = parseFloat(priceElement.getAttribute('data-base'));
+        const convertedPrice = (basePrice * rate);
+        
+        // Format the price based on currency requirements
+        let formattedPrice;
+        if (format.decimal === 0) {
+            formattedPrice = Math.round(convertedPrice).toLocaleString();
+        } else {
+            formattedPrice = convertedPrice.toFixed(format.decimal);
         }
+        
+        // Update the price display
+        const priceAmount = priceElement.querySelector('.price-amount');
+        const currencySymbol = priceElement.querySelector('.currency-symbol');
+        const currencyCode = priceElement.querySelector('.currency-code');
+        
+        priceAmount.textContent = formattedPrice;
+        currencySymbol.textContent = format.symbol;
+        currencyCode.textContent = selectedCurrency;
+        
+        // Adjust symbol position if needed
+        if (format.position === 'after') {
+            priceElement.innerHTML = `
+                <span class="price-amount">${formattedPrice}</span>
+                <span class="currency-symbol">${format.symbol}</span>
+                <span class="currency-code">${selectedCurrency}</span>
+            `;
+        }
+    });
+    
+    // Update hosting prices
+    const hostingPriceElements = document.querySelectorAll('.hosting-price');
+    hostingPriceElements.forEach(element => {
+        const basePrice = parseFloat(element.getAttribute('data-base'));
+        const convertedPrice = (basePrice * rate);
+        
+        let formattedPrice;
+        if (format.decimal === 0) {
+            formattedPrice = Math.round(convertedPrice);
+        } else {
+            formattedPrice = convertedPrice.toFixed(format.decimal);
+        }
+        
+        if (format.position === 'after') {
+            element.textContent = `Then ${formattedPrice}${format.symbol}/month hosting`;
+        } else {
+            element.textContent = `Then ${format.symbol}${formattedPrice}/month hosting`;
+        }
+    });
+}
 
         // Event Listeners
         currencySelect.addEventListener('change', updatePrices);
@@ -1578,28 +1413,8 @@
             nav.classList.toggle('active');
         });
 
-        // Mobile menu toggle
-        mobileMenu.addEventListener('click', () => {
-            document.querySelector('.mobile-nav').classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking links
-        document.querySelectorAll('.mobile-nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu
-                document.querySelector('.mobile-nav').classList.remove('active');
-            });
-        });
-        
+        // REMOVED: JavaScript form handler - Netlify handles submissions now
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
