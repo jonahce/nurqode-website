@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>NurQode - Premium Web Development Solutions</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -12,7 +12,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Global Styles */
+        /* Ultra Compact Global Styles */
         :root {
             --primary: #0A192F;
             --accent: #00E6B8;
@@ -32,74 +32,67 @@
         body {
             background-color: var(--background);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.3;
+            font-size: 11px;
         }
 
         .container {
-            width: 90%;
+            width: 98%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 8px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 6px 12px;
             background: var(--gradient);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
             text-decoration: none;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            font-size: 10px;
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--accent);
+            border: 1px solid var(--accent);
             color: var(--accent);
         }
 
-        .btn-outline:hover {
-            background: var(--accent);
-            color: white;
-        }
-
         section {
-            padding: 80px 0;
+            padding: 30px 0;
         }
 
         h1, h2, h3, h4 {
-            margin-bottom: 20px;
+            margin-bottom: 8px;
             color: var(--primary);
         }
 
         p {
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
 
-        /* Header Styles */
+        /* Ultra Compact Header */
         header {
             background-color: var(--primary);
             color: white;
-            padding: 20px 0;
+            padding: 6px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .logo {
@@ -108,137 +101,129 @@
         }
 
         .logo img {
-            height: 40px;
-            margin-right: 10px;
+            height: 22px;
+            margin-right: 6px;
         }
 
         .logo h1 {
-            font-size: 24px;
+            font-size: 14px;
             margin: 0;
             color: white;
         }
 
         .logo span {
             color: var(--accent);
+            font-size: 12px;
         }
 
         nav ul {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary);
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul.active {
             display: flex;
-            list-style: none;
         }
 
         nav ul li {
-            margin-left: 30px;
+            margin: 4px 0;
+            font-size: 11px;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent);
-        }
-
-        .auth-buttons {
-            display: flex;
-            gap: 15px;
+            padding: 3px 0;
+            display: block;
         }
 
         .mobile-menu {
-            display: none;
-            font-size: 24px;
+            display: block;
+            font-size: 16px;
             cursor: pointer;
+            padding: 5px;
         }
 
-        /* Currency Selector */
-        .currency-selector {
+        /* Currency & Language - Compact */
+        .currency-selector, .language-switcher {
             display: flex;
             align-items: center;
-            margin-left: 20px;
             color: white;
-        }
-
-        .currency-selector select {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
+            font-size: 10px;
             margin-left: 10px;
         }
 
-        .currency-selector select option {
-            color: var(--text);
+        .currency-selector select, .language-switcher select {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 3px 6px;
+            border-radius: 3px;
+            margin-left: 5px;
+            font-size: 10px;
+            max-width: 90px;
         }
 
-        /* Hero Section */
+        .auth-buttons {
+            display: none;
+        }
+
+        /* Ultra Compact Hero */
         .hero {
             background-color: var(--primary);
             color: white;
-            padding: 150px 0 100px;
+            padding: 80px 0 30px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%2300E6B8" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
+            margin-top: 38px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-size: 18px;
+            margin-bottom: 10px;
             color: white;
+            line-height: 1.2;
         }
 
         .hero h1 span {
             color: var(--accent);
+            font-size: 16px;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 11px;
+            margin-bottom: 15px;
             opacity: 0.9;
+            line-height: 1.3;
         }
 
         .hero-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
         }
 
-        /* Services Section */
+        /* Ultra Compact Services */
         .services {
             background-color: white;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 16px;
             position: relative;
             display: inline-block;
         }
@@ -246,108 +231,93 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -5px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
+            width: 40px;
+            height: 2px;
             background: var(--gradient);
-            border-radius: 2px;
+            border-radius: 1px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr;
+            gap: 12px;
         }
 
         .service-card {
             background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
             text-align: center;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
         .service-icon {
-            font-size: 50px;
+            font-size: 24px;
             color: var(--accent);
-            margin-bottom: 20px;
+            margin-bottom: 8px;
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 12px;
+            margin-bottom: 6px;
         }
 
-        /* Pricing Section */
+        /* Ultra Compact Pricing */
         .pricing {
             background-color: var(--background);
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr;
+            gap: 15px;
         }
 
         .pricing-card {
             background: white;
-            border-radius: 10px;
-            padding: 40px 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 6px;
+            padding: 20px 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
             text-align: center;
             position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
         .pricing-card.featured {
-            border: 2px solid var(--accent);
-            transform: scale(1.05);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-10px);
+            border: 1px solid var(--accent);
         }
 
         .pricing-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 12px;
+            margin-bottom: 8px;
         }
 
         .price {
-            font-size: 3rem;
+            font-size: 20px;
             font-weight: 700;
             color: var(--primary);
-            margin: 20px 0;
+            margin: 10px 0;
         }
 
         .price span {
-            font-size: 1rem;
+            font-size: 10px;
             color: var(--text);
             opacity: 0.7;
         }
 
         .pricing-features {
             list-style: none;
-            margin: 30px 0;
+            margin: 15px 0;
             text-align: left;
         }
 
         .pricing-features li {
-            margin-bottom: 10px;
-            padding-left: 25px;
+            margin-bottom: 5px;
+            padding-left: 18px;
             position: relative;
+            font-size: 10px;
         }
 
         .pricing-features li::before {
@@ -356,38 +326,144 @@
             left: 0;
             color: var(--accent);
             font-weight: bold;
+            font-size: 9px;
         }
 
-        /* About Section */
+        /* Pricing card headers - compact */
+        .pricing-card > div:first-child {
+            padding: 12px 15px !important;
+            margin: -20px -15px 10px -15px !important;
+            border-radius: 6px 6px 0 0 !important;
+        }
+
+        .pricing-card > div:first-child h3 {
+            font-size: 11px !important;
+            margin: 0 !important;
+        }
+
+        /* Hosting benefits - compact */
+        .pricing > .container > div:last-child {
+            padding: 20px !important;
+            margin-top: 20px !important;
+            border-radius: 8px !important;
+        }
+
+        .pricing > .container > div:last-child h4 {
+            font-size: 13px !important;
+            margin-bottom: 12px !important;
+        }
+
+        .pricing > .container > div:last-child > div {
+            grid-template-columns: 1fr 1fr !important;
+            gap: 15px !important;
+        }
+
+        .pricing > .container > div:last-child > div > div {
+            margin-bottom: 8px !important;
+        }
+
+        .pricing > .container > div:last-child > div > div > div {
+            width: 35px !important;
+            height: 35px !important;
+            margin: 0 auto 8px !important;
+            font-size: 16px !important;
+        }
+
+        .pricing > .container > div:last-child > div > div p:first-child {
+            font-size: 10px !important;
+            margin-bottom: 3px !important;
+        }
+
+        .pricing > .container > div:last-child > div > div p:last-child {
+            font-size: 9px !important;
+            opacity: 0.8 !important;
+        }
+
+        /* Ultra Compact About */
         .about {
             background-color: white;
         }
 
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 16px;
+            margin-bottom: 10px;
         }
 
-        .about-image {
-            border-radius: 10px;
+        .about-image > div {
+            height: 220px !important;
+            padding: 20px !important;
+            border-radius: 6px !important;
+        }
+
+        .about-image h3 {
+            font-size: 13px !important;
+            margin-bottom: 12px !important;
+        }
+
+        .about-image p {
+            font-size: 10px !important;
+            margin-bottom: 8px !important;
+        }
+
+        /* Ultra Compact FAQ */
+        .faq {
+            background-color: var(--background);
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .faq-question {
+            padding: 12px 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Contact Section */
+        .faq-question h3 {
+            margin: 0;
+            font-size: 11px;
+            color: var(--primary);
+        }
+
+        .faq-toggle {
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--accent);
+        }
+
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding-bottom: 12px;
+            margin: 0;
+            color: var(--text);
+            line-height: 1.3;
+            font-size: 10px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        /* Ultra Compact Contact */
         .contact {
             background-color: var(--primary);
             color: white;
@@ -399,95 +475,91 @@
 
         .contact-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         .contact-info h3 {
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            font-size: 13px;
         }
 
         .contact-info p {
-            margin-bottom: 30px;
+            margin-bottom: 12px;
             opacity: 0.9;
+            font-size: 11px;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 10px;
+            margin-top: 12px;
         }
 
         .social-links a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 35px;
+            height: 35px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: white;
-            font-size: 20px;
+            font-size: 14px;
             transition: all 0.3s ease;
         }
 
-        .social-links a:hover {
-            background: var(--accent);
-            transform: translateY(-5px);
+        /* Contact social media section - compact */
+        .contact-form h3 {
+            font-size: 13px !important;
+            margin-bottom: 10px !important;
         }
 
-        .contact-form {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 10px;
+        .contact-form > p {
+            font-size: 11px !important;
+            margin-bottom: 20px !important;
         }
 
-        .form-group {
-            margin-bottom: 20px;
+        .contact-form .social-links a {
+            width: 45px !important;
+            height: 45px !important;
+            font-size: 18px !important;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
+        .contact-form > div:last-child {
+            margin-top: 20px !important;
+            padding: 15px !important;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            color: white;
-            font-size: 16px;
+        .contact-form > div:last-child > p:first-child {
+            font-size: 11px !important;
+            margin-bottom: 6px !important;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
+        .contact-form > div:last-child p {
+            font-size: 10px !important;
+            margin: 3px 0 !important;
         }
 
-        /* Footer */
+        /* Ultra Compact Footer */
         footer {
             background-color: var(--primary);
             color: white;
-            padding: 60px 0 30px;
+            padding: 25px 0 10px;
         }
 
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
         }
 
         .footer-col h3 {
             color: white;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-size: 12px;
         }
 
         .footer-col ul {
@@ -495,184 +567,80 @@
         }
 
         .footer-col ul li {
-            margin-bottom: 10px;
+            margin-bottom: 4px;
+            font-size: 10px;
         }
 
         .footer-col ul li a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--accent);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 10px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            font-size: 9px;
         }
 
-        /* Login Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 2000;
+        /* Social Modal Styles */
+        .social-modal .modal-content {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 320px;
+        }
+
+        .social-option-btn {
+            transition: all 0.3s ease;
+            font-size: 12px;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .modal-content {
-            background: white;
-            width: 90%;
-            max-width: 400px;
-            border-radius: 10px;
-            padding: 30px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 24px;
-            cursor: pointer;
-            color: var(--text);
-        }
-
-        .modal h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .modal .form-group {
-            margin-bottom: 20px;
-        }
-
-        .modal .form-group label {
-            color: var(--text);
-        }
-
-        .modal .form-group input {
-            background: white;
-            border: 1px solid #ddd;
-            color: var(--text);
-        }
-
-        .modal .form-group input:focus {
-            border-color: var(--accent);
-        }
-
-        .modal .btn {
+            gap: 8px;
+            font-weight: 600;
+            margin-bottom: 8px;
             width: 100%;
-            margin-top: 10px;
         }
 
-        .modal-footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9rem;
+        .social-option-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
-        .modal-footer a {
-            color: var(--accent);
-            text-decoration: none;
+        .whatsapp-btn { background: #25D366; color: white; }
+        .email-btn { background: #EA4335; color: white; }
+        .messenger-btn { background: #0084FF; color: white; }
+
+        .whatsapp-btn:hover { background: #128C7E; }
+        .email-btn:hover { background: #D14836; }
+        .messenger-btn:hover { background: #0078FF; }
+
+        /* Desktop styles */
+        @media (min-width: 769px) {
+            .mobile-menu { display: none; }
+            nav ul { display: flex; position: static; background: none; box-shadow: none; padding: 0; flex-direction: row; }
+            nav ul li { margin-left: 15px; font-size: 12px; }
+            .services-grid { grid-template-columns: repeat(3, 1fr); }
+            .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+            .about-content { grid-template-columns: 1fr 1fr; }
+            .contact-container { grid-template-columns: 1fr 1fr; }
+            .footer-container { grid-template-columns: repeat(4, 1fr); }
+            .pricing > .container > div:last-child > div { grid-template-columns: repeat(4, 1fr) !important; }
         }
 
-        /* FAQ Section Styles */
-        .faq {
-            background-color: var(--background);
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 20px 25px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s;
-        }
-
-        .faq-question:hover {
-            background-color: #f8f9fa;
-        }
-
-        .faq-question h3 {
-            margin: 0;
-            font-size: 1.1rem;
-            color: var(--primary);
-        }
-
-        .faq-toggle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: var(--accent);
-            transition: transform 0.3s;
-        }
-
-        .faq-answer {
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .faq-answer p {
-            padding-bottom: 20px;
-            margin: 0;
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-
-        .faq-item.active .faq-toggle {
-            transform: rotate(45deg);
-        }
-
-        /* Language Switcher Styles */
-        .language-switcher {
-            display: flex;
-            align-items: center;
-            margin-left: 20px;
-            color: white;
-        }
-
-        .language-switcher select {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            margin-left: 10px;
-        }
-
-        .language-switcher select option {
-            color: var(--text);
+        /* Extra small devices */
+        @media (max-width: 320px) {
+            .container { width: 100%; padding: 0 5px; }
+            .hero { padding: 70px 0 25px; margin-top: 35px; }
+            .hero h1 { font-size: 16px; }
+            .hero p { font-size: 10px; }
+            section { padding: 25px 0; }
         }
 
         /* RTL Support for Arabic */
@@ -711,7 +679,7 @@
         [dir="rtl"] .pricing-features li,
         [dir="rtl"] .package-features li {
             padding-left: 0;
-            padding-right: 25px;
+            padding-right: 18px;
         }
 
         [dir="rtl"] .pricing-features li::before,
@@ -727,439 +695,104 @@
         [dir="rtl"] .social-links,
         [dir="rtl"] .hero-buttons {
             direction: ltr;
-        }        
+        }
 
-                @media (max-width: 768px) {
+        /* Fix modal display */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        /* Fix mobile menu display */
+        @media (max-width: 768px) {
             nav ul {
                 display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--persian-blue);
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             }
-
+            
             nav ul.active {
-                display: flex;
+                display: flex !important;
             }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
+            
             .mobile-menu {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .calculator-input {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .calculator-input input {
-                width: 100%;
+                display: block !important;
             }
         }
 
-        @media (max-width: 576px) {
-            .hero {
-                padding: 60px 0;
+        /* Move menu button to top right on mobile only */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                position: absolute !important;
+                right: 15px !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
             }
-
-            .services, .about, .contact, .payment {
-                padding: 60px 0;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
+            
+            .header-container {
+                position: relative !important;
             }
         }
 
-        /* Make footer compact on desktop */
-        footer {
-            padding: 20px 0 10px;
+        /* Stack currency and language on top right for mobile */
+        @media (max-width: 768px) {
+            .currency-selector, .language-switcher {
+                position: static !important;
+                margin: 0 5px !important;
+                font-size: 8px !important;
+            }
+            
+            .currency-selector select, .language-switcher select {
+                max-width: 65px !important;
+                font-size: 8px !important;
+                padding: 2px 4px !important;
+            }
+            
+            .header-container {
+                justify-content: space-between !important;
+                flex-wrap: nowrap !important;
+            }
+            
+            .logo {
+                flex-shrink: 0;
+            }
+            
+            .currency-selector span, .language-switcher span {
+                display: none !important; /* Hide the "Currency:" and "Language:" text */
+            }
+            
+            /* Stack the selectors horizontally */
+            .currency-selector, .language-switcher {
+                display: inline-block !important;
+                margin: 0 3px !important;
+            }
+            
+            .mobile-menu {
+                margin-left: auto !important;
+            }
         }
 
-        .footer-content {
-            margin-bottom: 20px;
+        /* Move language selector slightly left */
+        @media (max-width: 768px) {
+            .language-switcher {
+                margin-right: 35px !important; /* Move language selector left */
+            }
+            
+            .currency-selector {
+                margin-right: 5px !important;
+            }
         }
 
-        .footer-section {
-            margin-bottom: 15px;
-        }
-
-        .footer-section h3 {
-            font-size: 1rem;
-            margin-bottom: 12px;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 6px;
-            font-size: 0.85rem;
-        }
-
-        .footer-section p {
-            font-size: 0.85rem;
-            line-height: 1.4;
-        }
-
-        .social-links {
-            gap: 10px;
-        }
-
-        .social-links a {
-            width: 35px;
-            height: 35px;
-        }
-
-        .copyright {
-            padding-top: 15px;
-            font-size: 0.8rem;
-        }        
-
-        /* Copy button styles */
-        .copy-btn {
-            background: var(--safaricom-green);
-            color: white;
-            border: none;
-            border-radius: 3px;
-            padding: 2px 6px;
-            margin-left: 8px;
-            font-size: 0.7rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .copy-btn:hover {
-            background: #008f45;
-            transform: scale(1.05);
-        }
-
-        .copy-btn.copied {
-            background: var(--orange);
-        }
-
-        .payment-details p {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        @media (max-width: 576px) {
-            /* Ultra compact header */
-            header {
-                padding: 6px 0;
-            }
-            
-            .logo img {
-                height: 22px;
-            }
-            
-            .logo-text {
-                font-size: 0.9rem;
-                margin-left: 6px;
-            }
-            
-            nav ul li {
-                margin-left: 15px;
-                font-size: 0.85rem;
-            }
-            
-            /* Ultra compact hero */
-            .hero {
-                padding: 20px 0;
-            }
-            
-            .hero h1 {
-                font-size: 1.1rem;
-                margin-bottom: 6px;
-            }
-            
-            .hero p {
-                font-size: 0.8rem;
-                margin-bottom: 10px;
-            }
-            
-            /* Ultra compact sections */
-            .services, .about, .contact, .payment {
-                padding: 20px 0;
-            }
-            
-            .section-title {
-                font-size: 1rem;
-                margin-bottom: 12px;
-            }
-            
-            /* Ultra compact cards */
-            .service-card, .package-card, .contact-card {
-                padding: 10px;
-            }
-            
-            .service-icon {
-                font-size: 1.3rem;
-                margin-bottom: 6px;
-            }
-            
-            .service-card h3, .package-card h3 {
-                font-size: 0.9rem;
-                margin-bottom: 6px;
-            }
-            
-            .package-price {
-                font-size: 1rem;
-                margin: 10px 0;
-            }
-            
-            /* Ultra compact contact */
-            .contact-icon {
-                font-size: 1.3rem;
-                margin-bottom: 6px;
-            }
-            
-            .contact-card h3 {
-                font-size: 0.85rem;
-                margin-bottom: 6px;
-            }
-            
-            .contact-card p {
-                font-size: 0.8rem;
-            }
-            
-            /* Ultra compact payment */
-            .payment-card {
-                padding: 10px;
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            
-            .payment-options {
-                gap: 10px;
-            }
-            
-            /* Ultra compact footer */
-            footer {
-                padding: 12px 0 6px;
-            }
-            
-            .footer-content {
-                margin-bottom: 12px;
-            }
-            
-            .footer-section {
-                margin-bottom: 10px;
-                min-width: 100%;
-            }
-            
-            .footer-section h3 {
-                font-size: 0.85rem;
-                margin-bottom: 6px;
-            }
-            
-            .footer-section ul li {
-                margin-bottom: 3px;
-                font-size: 0.75rem;
-            }
-            
-            .footer-section p {
-                font-size: 0.75rem;
-            }
-            
-            .social-links {
-                gap: 6px;
-            }
-            
-            .social-links a {
-                width: 28px;
-                height: 28px;
-                font-size: 0.75rem;
-            }
-            
-            .copyright {
-                padding-top: 10px;
-                font-size: 0.7rem;
-            }
-            
-            /* Ultra compact buttons */
-            .btn {
-                padding: 5px 10px;
-                font-size: 0.75rem;
-            }
-            
-            /* Ultra compact calculator */
-            .calculator {
-                padding: 8px;
-                margin: 8px 0;
-            }
-            
-            .calculator-input {
-                margin-bottom: 5px;
-            }
-            
-            .calculator-input label {
-                font-size: 0.8rem;
-                min-width: 80px;
-            }
-            
-            .calculator-input input {
-                padding: 4px;
-                font-size: 0.75rem;
-                width: 90px;
-            }
-            
-            .calculator-result {
-                padding: 6px;
-                margin-top: 6px;
-            }
-            
-            .calculator-result h4 {
-                font-size: 0.8rem;
-                margin-bottom: 3px;
-            }
-            
-            .total-price {
-                font-size: 0.9rem;
-            }
-            
-            /* Ultra compact modal */
-            .modal-content {
-                padding: 10px;
-            }
-            
-            .modal-header h2 {
-                font-size: 1rem;
-            }
-            
-            /* Ultra compact features */
-            .package-features li {
-                margin-bottom: 3px;
-                font-size: 0.75rem;
-            }
-            
-            .package-features li i {
-                margin-right: 3px;
-                font-size: 0.7rem;
-            }
-            
-            /* Ultra compact about */
-            .about-content {
-                gap: 12px;
-            }
-            
-            .about-text p {
-                margin-bottom: 6px;
-                font-size: 0.8rem;
-            }
-            
-            /* Reduce all text sizes */
-            body {
-                font-size: 0.85rem;
-            }
-            
-            /* Payment details smaller */
-            .payment-details p {
-                font-size: 0.8rem;
-                margin-bottom: 4px;
-            }
-            
-            .payment-card p {
-                font-size: 0.75rem;
-            }
-            
-            /* Page header smaller */
-            .page-header {
-                padding: 25px 0;
-            }
-            
-            .page-header h1 {
-                font-size: 1.2rem;
-            }
-            
-            .page-header p {
-                font-size: 0.8rem;
-            }
-
-            /* Make footer MICRO compact */
-            footer {
-                padding: 4px 0 2px !important;
-            }
-            
-            .footer-content {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 5px;
-                margin-bottom: 5px;
-            }
-            
-            .footer-section {
-                margin-bottom: 0;
-                padding: 0 3px;
-            }
-            
-            .footer-section h3 {
-                font-size: 0.65rem;
-                margin-bottom: 2px;
-            }
-            
-            .footer-section ul li {
-                margin-bottom: 1px;
-                font-size: 0.6rem;
-            }
-            
-            .footer-section p {
-                font-size: 0.6rem;
-                line-height: 1.1;
-                margin-bottom: 2px;
-            }
-            
-            .social-links {
-                gap: 3px;
-                margin-top: 3px;
-            }
-            
-            .social-links a {
-                width: 20px;
-                height: 20px;
-                font-size: 0.6rem;
-            }
-            
-            .copyright {
-                padding-top: 4px;
-                font-size: 0.55rem;
-            }
-            
-            /* Reduce the first section size */
-            .footer-section:first-child {
-                grid-column: 1 / -1;
-                text-align: center;
-                padding-bottom: 2px;
-            }
-            
-            .footer-section:first-child p {
-                font-size: 0.6rem;
-                margin-bottom: 2px;
-            }
-            
-            /* Hide some footer content if still too big */
-            .footer-section:nth-child(4) {
-                display: none;
-            }
-
-        }
     </style>
 </head>
 <body>
@@ -1167,7 +800,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="logo.png" alt="NurQode Logo" style="height: 60px; margin-right: 10px;">
+                <img src="logo.png" alt="NurQode Logo" style="height: 22px; margin-right: 6px;">
                 <h1>Nur<span>Qode</span></h1>
             </div>
             
@@ -1210,12 +843,10 @@
                 </select>
             </div>
 
-                <div class="auth-buttons">
-                    <!-- No buttons - clean header -->
-                    <div id="user-welcome" style="display: none;">
-                        <span style="color: var(--accent); margin-right: 15px;" id="welcome-text"></span>
-                        <button class="btn btn-outline" id="logout-btn">Logout</button>
-                    </div>
+            <div class="auth-buttons">
+                <div id="user-welcome" style="display: none;">
+                    <span style="color: var(--accent); margin-right: 15px;" id="welcome-text"></span>
+                    <button class="btn btn-outline" id="logout-btn">Logout</button>
                 </div>
             </div>
         </div>
@@ -1287,7 +918,7 @@
         </div>
     </section>
 
-            <!-- Pricing Section -->
+    <!-- Pricing Section -->
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-title">
@@ -1296,7 +927,7 @@
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; margin: -40px -30px 20px -30px; border-radius: 10px 10px 0 0;">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
                         <h3 style="color: white; margin: 0;" data-translate="starterPlan">🚀 Starter Package</h3>
                     </div>
                     <div class="price" data-base="499" style="color: #667eea;">
@@ -1313,16 +944,16 @@
                         <li data-translate="feature5">1 Month Free Hosting</li>
                         <li>Standard Support</li>
                     </ul>
-                    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 15px; border-radius: 8px; margin: 15px 0; text-align: center;">
-                        <p style="margin: 0; font-weight: 600; font-size: 1.1rem;">
+                    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 10px; border-radius: 5px; margin: 12px 0; text-align: center;">
+                        <p style="margin: 0; font-weight: 600; font-size: 11px;">
                             <span class="hosting-price" data-base="25">Then $25/month hosting</span>
                         </p>
                     </div>
-                    <a href="#contact" class="btn btn-outline" style="border-color: #667eea; color: #667eea;" data-translate="getStarted">Get Started</a>
+                    <button class="btn btn-outline purchase-btn" style="border-color: #667eea; color: #667eea;" data-package="Starter Package" data-price="$499">PURCHASE PACKAGE</button>
                 </div>
                 
                 <div class="pricing-card featured">
-                    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 20px; margin: -40px -30px 20px -30px; border-radius: 10px 10px 0 0;">
+                    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
                         <h3 style="color: white; margin: 0;" data-translate="proPlan">💼 Business Package</h3>
                     </div>
                     <div class="price" data-base="999" style="color: #f5576c;">
@@ -1340,16 +971,16 @@
                         <li>Priority Support</li>
                         <li data-translate="feature11">Content Management System</li>
                     </ul>
-                    <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 15px; border-radius: 8px; margin: 15px 0; text-align: center;">
-                        <p style="margin: 0; font-weight: 600; font-size: 1.1rem;">
+                    <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 10px; border-radius: 5px; margin: 12px 0; text-align: center;">
+                        <p style="margin: 0; font-weight: 600; font-size: 11px;">
                             <span class="hosting-price" data-base="45">Then $45/month hosting</span>
                         </p>
                     </div>
-                    <a href="#contact" class="btn" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);" data-translate="getStarted">Get Started</a>
+                    <button class="btn purchase-btn" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);" data-package="Business Package" data-price="$999">PURCHASE PACKAGE</button>
                 </div>
                 
                 <div class="pricing-card">
-                    <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 20px; margin: -40px -30px 20px -30px; border-radius: 10px 10px 0 0;">
+                    <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white;">
                         <h3 style="color: white; margin: 0;" data-translate="enterprisePlan">⭐ Premium Package</h3>
                     </div>
                     <div class="price" data-base="1999" style="color: #4facfe;">
@@ -1367,45 +998,45 @@
                         <li>24/7 Priority Support</li>
                         <li data-translate="feature18">Performance Optimization</li>
                     </ul>
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px; border-radius: 8px; margin: 15px 0; text-align: center;">
-                        <p style="margin: 0; font-weight: 600; font-size: 1.1rem;">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px; border-radius: 5px; margin: 12px 0; text-align: center;">
+                        <p style="margin: 0; font-weight: 600; font-size: 11px;">
                             <span class="hosting-price" data-base="75">Then $75/month hosting</span>
                         </p>
                     </div>
-                    <a href="#contact" class="btn btn-outline" style="border-color: #4facfe; color: #4facfe;" data-translate="getStarted">Get Started</a>
+                    <button class="btn btn-outline purchase-btn" style="border-color: #4facfe; color: #4facfe;" data-package="Premium Package" data-price="$1999">PURCHASE PACKAGE</button>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 50px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; color: white;">
-                <h4 style="color: white; margin-bottom: 20px; font-size: 1.5rem;" data-translate="hostingBenefits">🎯 What's Included in Hosting?</h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; text-align: center;">
+            <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; color: white;">
+                <h4 style="color: white; margin-bottom: 12px; font-size: 13px;" data-translate="hostingBenefits">🎯 What's Included in Hosting?</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center;">
                     <div>
-                        <div style="background: rgba(255,255,255,0.2); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 24px;">
+                        <div style="background: rgba(255,255,255,0.2); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-size: 16px;">
                             ⚡
                         </div>
-                        <p style="font-weight: 600; margin-bottom: 5px;" data-translate="benefit1">Blazing Fast</p>
-                        <p style="font-size: 0.9rem; opacity: 0.9;" data-translate="benefit1Desc">Premium servers for instant loading</p>
+                        <p style="font-weight: 600; margin-bottom: 3px; font-size: 10px;" data-translate="benefit1">Blazing Fast</p>
+                        <p style="font-size: 9px; opacity: 0.9;" data-translate="benefit1Desc">Premium servers for instant loading</p>
                     </div>
                     <div>
-                        <div style="background: rgba(255,255,255,0.2); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 24px;">
+                        <div style="background: rgba(255,255,255,0.2); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-size: 16px;">
                             🛡️
                         </div>
-                        <p style="font-weight: 600; margin-bottom: 5px;" data-translate="benefit2">Secure & Safe</p>
-                        <p style="font-size: 0.9rem; opacity: 0.9;" data-translate="benefit2Desc">SSL, backups & protection</p>
+                        <p style="font-weight: 600; margin-bottom: 3px; font-size: 10px;" data-translate="benefit2">Secure & Safe</p>
+                        <p style="font-size: 9px; opacity: 0.9;" data-translate="benefit2Desc">SSL, backups & protection</p>
                     </div>
                     <div>
-                        <div style="background: rgba(255,255,255,0.2); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 24px;">
+                        <div style="background: rgba(255,255,255,0.2); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-size: 16px;">
                             📞
                         </div>
-                        <p style="font-weight: 600; margin-bottom: 5px;" data-translate="benefit3">Expert Support</p>
-                        <p style="font-size: 0.9rem; opacity: 0.9;" data-translate="benefit3Desc">We handle all technical issues</p>
+                        <p style="font-weight: 600; margin-bottom: 3px; font-size: 10px;" data-translate="benefit3">Expert Support</p>
+                        <p style="font-size: 9px; opacity: 0.9;" data-translate="benefit3Desc">We handle all technical issues</p>
                     </div>
                     <div>
-                        <div style="background: rgba(255,255,255,0.2); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 24px;">
+                        <div style="background: rgba(255,255,255,0.2); width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; font-size: 16px;">
                             📈
                         </div>
-                        <p style="font-weight: 600; margin-bottom: 5px;" data-translate="benefit4">Always Online</p>
-                        <p style="font-size: 0.9rem; opacity: 0.9;" data-translate="benefit4Desc">99.9% uptime guarantee</p>
+                        <p style="font-weight: 600; margin-bottom: 3px; font-size: 10px;" data-translate="benefit4">Always Online</p>
+                        <p style="font-size: 9px; opacity: 0.9;" data-translate="benefit4Desc">99.9% uptime guarantee</p>
                     </div>
                 </div>
             </div>
@@ -1424,11 +1055,11 @@
                     <a href="#contact" class="btn" data-translate="contactUs">Contact Us</a>
                 </div>
                 <div class="about-image">
-                    <div style="width: 100%; height: 400px; background: var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 30px; border-radius: 10px;">
-                        <h3 style="color: var(--accent); margin-bottom: 20px;">Get In Touch</h3>
-                        <p style="margin-bottom: 15px;"><i class="fas fa-envelope"></i> nurqode@gmail.com</p>
-                        <p style="margin-bottom: 15px;"><i class="fas fa-phone"></i> +974 3089 2590</p>
-                        <p style="margin-bottom: 25px;"><i class="fas fa-map-marker-alt"></i> Qatar • UAE • KSA • Turkey</p>
+                    <div style="background: var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; border-radius: 6px;">
+                        <h3 style="color: var(--accent); margin-bottom: 12px;">Get In Touch</h3>
+                        <p style="margin-bottom: 8px;"><i class="fas fa-envelope"></i> nurqode@gmail.com</p>
+                        <p style="margin-bottom: 8px;"><i class="fas fa-phone"></i> +974 3089 2590</p>
+                        <p style="margin-bottom: 15px;"><i class="fas fa-map-marker-alt"></i> Qatar • UAE • KSA • Turkey</p>
                         
                         <div class="social-links">
                             <a href="https://www.facebook.com/share/1GvnxedaE7/" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -1499,7 +1130,7 @@
         </div>
     </section>
 
-       <!-- Contact Section -->
+    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
@@ -1515,7 +1146,6 @@
                     <p><i class="fas fa-map-marker-alt"></i> <span data-translate="officesText">Offices in Doha, Dubai, Riyadh, and Istanbul</span></p>
                 </div>
                 
-                <!-- REPLACED FORM WITH SOCIAL MEDIA -->
                 <div class="contact-form" style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                     <h3 style="color: white; margin-bottom: 30px;">Reach Us Via Our Social Media Platforms</h3>
                     <p style="color: rgba(255,255,255,0.8); margin-bottom: 40px;">We're most responsive on these platforms. Click any button below to start a conversation!</p>
@@ -1589,84 +1219,41 @@
         </div>
     </footer>
 
-    <!-- Login Modal -->
-    <div class="modal" id="login-modal">
+    <!-- Social Media Selection Modal -->
+    <div class="modal social-modal" id="social-modal" style="display: none;">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2 data-translate="loginTitle">Login to Your Account</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="login-email" data-translate="emailAddress">Email Address</label>
-                    <input type="email" id="login-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="login-password" data-translate="password">Password</label>
-                    <input type="password" id="login-password" required>
-                </div>
-                <button type="submit" class="btn" data-translate="login">Login</button>
-            </form>
-            <div class="modal-footer">
-                <p data-translate="noAccount">Don't have an account? <a href="#" id="switch-to-signup" data-translate="signup">Sign up</a></p>
+            <h3 style="text-align: center; margin-bottom: 15px; color: var(--primary); font-size: 14px;">Choose how to contact us</h3>
+            <p style="text-align: center; margin-bottom: 20px; font-size: 11px; color: var(--text);">Select your preferred platform to discuss the package</p>
+            
+            <div class="social-options">
+                <button class="social-option-btn whatsapp-btn" data-platform="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp Message
+                </button>
+                
+                <button class="social-option-btn email-btn" data-platform="email">
+                    <i class="fas fa-envelope"></i>
+                    Send Email
+                </button>
+                
+                <button class="social-option-btn messenger-btn" data-platform="messenger">
+                    <i class="fab fa-facebook-messenger"></i>
+                    Facebook Messenger
+                </button>
+            </div>
+            
+            <div style="text-align: center; margin-top: 15px;">
+                <button class="btn btn-outline" id="cancel-social" style="padding: 6px 15px; font-size: 10px;">Cancel</button>
             </div>
         </div>
     </div>
 
-    <!-- Signup Modal -->
-    <div class="modal" id="signup-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 data-translate="signupTitle">Create an Account</h2>
-            <form id="signup-form">
-                <div class="form-group">
-                    <label for="signup-name" data-translate="fullName">Full Name</label>
-                    <input type="text" id="signup-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="signup-email" data-translate="emailAddress">Email Address</label>
-                    <input type="email" id="signup-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="signup-password" data-translate="password">Password</label>
-                    <input type="password" id="signup-password" required>
-                </div>
-                <div class="form-group">
-                    <label for="signup-country" data-translate="selectCountry">Country</label>
-                    <select id="signup-country" required>
-                        <option value="" data-translate="selectCountryOption">Select your country</option>
-                        <option value="USA" data-translate="usaOption">United States</option>
-                        <option value="Canada" data-translate="canadaOption">Canada</option>
-                        <option value="Qatar" data-translate="qatarOption">Qatar</option>
-                        <option value="UAE" data-translate="uaeOption">UAE</option>
-                        <option value="Saudi Arabia" data-translate="saudiOption">Saudi Arabia</option>
-                        <option value="Kuwait" data-translate="kuwaitOption">Kuwait</option>
-                        <option value="Oman" data-translate="omanOption">Oman</option>
-                        <option value="Bahrain" data-translate="bahrainOption">Bahrain</option>
-                        <option value="Lebanon" data-translate="lebanonOption">Lebanon</option>
-                        <option value="Turkey" data-translate="turkeyOption">Turkey</option>
-                        <option value="Jordan" data-translate="jordanOption">Jordan</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn" data-translate="signup">Sign Up</button>
-            </form>
-            <div class="modal-footer">
-                <p data-translate="haveAccount">Already have an account? <a href="#" id="switch-to-login" data-translate="login">Login</a></p>
-            </div>
-        </div>
-    </div>
     <script>
-        // Real exchange rates (approximate values as of early 2024)
+        // Real exchange rates
         const exchangeRates = {
-            'USD': 1,       // US Dollar
-            'CAD': 1.35,    // Canadian Dollar
-            'QAR': 3.64,    // Qatar Riyal
-            'AED': 3.67,    // UAE Dirham
-            'SAR': 3.75,    // Saudi Riyal
-            'KWD': 0.31,    // Kuwaiti Dinar
-            'OMR': 0.38,    // Omani Rial
-            'BHD': 0.38,    // Bahraini Dinar
-            'LBP': 1507.5,  // Lebanese Pound
-            'TRY': 30.5,    // Turkish Lira
-            'JOD': 0.71     // Jordanian Dinar
+            'USD': 1, 'CAD': 1.35, 'QAR': 3.64, 'AED': 3.67, 'SAR': 3.75,
+            'KWD': 0.31, 'OMR': 0.38, 'BHD': 0.38, 'LBP': 1507.5, 'TRY': 30.5, 'JOD': 0.71
         };
 
         // Currency formatting
@@ -1690,64 +1277,100 @@
         const mobileMenu = document.querySelector('.mobile-menu');
         const nav = document.querySelector('nav');
 
-        // Update prices based on selected currency with real conversion
-function updatePrices() {
-    const selectedCurrency = currencySelect.value;
-    const rate = exchangeRates[selectedCurrency];
-    const format = currencyFormats[selectedCurrency];
-    
-    // Update package prices
-    priceElements.forEach(priceElement => {
-        const basePrice = parseFloat(priceElement.getAttribute('data-base'));
-        const convertedPrice = (basePrice * rate);
-        
-        // Format the price based on currency requirements
-        let formattedPrice;
-        if (format.decimal === 0) {
-            formattedPrice = Math.round(convertedPrice).toLocaleString();
-        } else {
-            formattedPrice = convertedPrice.toFixed(format.decimal);
+        // Social Modal Elements
+        const socialModal = document.getElementById('social-modal');
+        const closeSocialModal = socialModal.querySelector('.close-modal');
+        const cancelSocialBtn = document.getElementById('cancel-social');
+        const socialOptionBtns = document.querySelectorAll('.social-option-btn');
+        const purchaseBtns = document.querySelectorAll('.purchase-btn');
+
+        // Current selected package info
+        let currentPackage = null;
+
+        // Update prices based on selected currency
+        function updatePrices() {
+            const selectedCurrency = currencySelect.value;
+            const rate = exchangeRates[selectedCurrency];
+            const format = currencyFormats[selectedCurrency];
+            
+            priceElements.forEach(priceElement => {
+                const basePrice = parseFloat(priceElement.getAttribute('data-base'));
+                const convertedPrice = (basePrice * rate);
+                
+                let formattedPrice;
+                if (format.decimal === 0) {
+                    formattedPrice = Math.round(convertedPrice).toLocaleString();
+                } else {
+                    formattedPrice = convertedPrice.toFixed(format.decimal);
+                }
+                
+                const priceAmount = priceElement.querySelector('.price-amount');
+                const currencySymbol = priceElement.querySelector('.currency-symbol');
+                const currencyCode = priceElement.querySelector('.currency-code');
+                
+                priceAmount.textContent = formattedPrice;
+                currencySymbol.textContent = format.symbol;
+                currencyCode.textContent = selectedCurrency;
+                
+                if (format.position === 'after') {
+                    priceElement.innerHTML = `
+                        <span class="price-amount">${formattedPrice}</span>
+                        <span class="currency-symbol">${format.symbol}</span>
+                        <span class="currency-code">${selectedCurrency}</span>
+                    `;
+                }
+            });
+            
+            const hostingPriceElements = document.querySelectorAll('.hosting-price');
+            hostingPriceElements.forEach(element => {
+                const basePrice = parseFloat(element.getAttribute('data-base'));
+                const convertedPrice = (basePrice * rate);
+                
+                let formattedPrice;
+                if (format.decimal === 0) {
+                    formattedPrice = Math.round(convertedPrice);
+                } else {
+                    formattedPrice = convertedPrice.toFixed(format.decimal);
+                }
+                
+                if (format.position === 'after') {
+                    element.textContent = `Then ${formattedPrice}${format.symbol}/month hosting`;
+                } else {
+                    element.textContent = `Then ${format.symbol}${formattedPrice}/month hosting`;
+                }
+            });
         }
-        
-        // Update the price display
-        const priceAmount = priceElement.querySelector('.price-amount');
-        const currencySymbol = priceElement.querySelector('.currency-symbol');
-        const currencyCode = priceElement.querySelector('.currency-code');
-        
-        priceAmount.textContent = formattedPrice;
-        currencySymbol.textContent = format.symbol;
-        currencyCode.textContent = selectedCurrency;
-        
-        // Adjust symbol position if needed
-        if (format.position === 'after') {
-            priceElement.innerHTML = `
-                <span class="price-amount">${formattedPrice}</span>
-                <span class="currency-symbol">${format.symbol}</span>
-                <span class="currency-code">${selectedCurrency}</span>
-            `;
+
+        // Social Modal Functions
+        function openSocialModal(packageInfo) {
+            currentPackage = packageInfo;
+            socialModal.style.display = 'flex';
         }
-    });
-    
-    // Update hosting prices
-    const hostingPriceElements = document.querySelectorAll('.hosting-price');
-    hostingPriceElements.forEach(element => {
-        const basePrice = parseFloat(element.getAttribute('data-base'));
-        const convertedPrice = (basePrice * rate);
-        
-        let formattedPrice;
-        if (format.decimal === 0) {
-            formattedPrice = Math.round(convertedPrice);
-        } else {
-            formattedPrice = convertedPrice.toFixed(format.decimal);
+
+        function closeSocialModalFunc() {
+            socialModal.style.display = 'none';
+            currentPackage = null;
         }
-        
-        if (format.position === 'after') {
-            element.textContent = `Then ${formattedPrice}${format.symbol}/month hosting`;
-        } else {
-            element.textContent = `Then ${format.symbol}${formattedPrice}/month hosting`;
+
+        function redirectToSocialPlatform(platform, packageName, packagePrice) {
+            const messages = {
+                'whatsapp': `Hello! I'm interested in the ${packageName} package (${packagePrice}). Can you provide more details and start the process?`,
+                'email': `Subject: Inquiry About ${packageName} Package\n\nHello NurQode team,\n\nI would like to get more information about your ${packageName} package (${packagePrice}) and discuss starting my project.\n\nPlease provide me with the next steps.\n\nBest regards,`,
+                'messenger': `Hello! I'm interested in the ${packageName} package (${packagePrice}). Can we discuss the details and get started?`
+            };
+            
+            const encodedMessage = encodeURIComponent(messages[platform]);
+            const currentPageUrl = encodeURIComponent(window.location.href);
+            
+            const urls = {
+                'whatsapp': `https://wa.me/97430892590?text=${encodedMessage}%0A%0AComing from: ${currentPageUrl}`,
+                'email': `mailto:nurqode@gmail.com?subject=Inquiry About ${encodeURIComponent(packageName)} Package&body=${encodedMessage}%0A%0AComing from: ${currentPageUrl}`,
+                'messenger': `https://m.me/nurqode?text=${encodedMessage}%0A%0AComing from: ${currentPageUrl}`
+            };
+            
+            window.open(urls[platform], '_blank');
+            closeSocialModalFunc();
         }
-    });
-}
 
         // Event Listeners
         currencySelect.addEventListener('change', updatePrices);
@@ -1757,8 +1380,6 @@ function updatePrices() {
             nav.classList.toggle('active');
         });
 
-        // REMOVED: JavaScript form handler - Netlify handles submissions now
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1767,7 +1388,7 @@ function updatePrices() {
                 const targetElement = document.querySelector(targetId);
                 
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: targetElement.offsetTop - 50,
                     behavior: 'smooth'
                 });
                 
@@ -1784,23 +1405,54 @@ function updatePrices() {
             });
         });
 
+        // Purchase buttons - Open Social Modal
+        purchaseBtns.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const packageName = this.getAttribute('data-package');
+                const packagePrice = this.getAttribute('data-price');
+                
+                openSocialModal({
+                    name: packageName,
+                    price: packagePrice
+                });
+            });
+        });
+
+        // Social Modal Events
+        closeSocialModal.addEventListener('click', closeSocialModalFunc);
+        cancelSocialBtn.addEventListener('click', closeSocialModalFunc);
+
+        // Social platform selection
+        socialOptionBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const platform = this.getAttribute('data-platform');
+                if (currentPackage) {
+                    redirectToSocialPlatform(platform, currentPackage.name, currentPackage.price);
+                }
+            });
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === socialModal) {
+                closeSocialModalFunc();
+            }
+        });
+
         // Language Support
         const translations = {
             en: {
-                // Navigation
+                // ... (your full translations object remains exactly the same)
                 'home': 'Home',
                 'services': 'Services',
                 'pricing': 'Pricing',
                 'about': 'About',
                 'contact': 'Contact',
-                
-                // Hero Section
                 'heroTitle': 'Premium Web Solutions for the <span>Middle East and North America</span>',
                 'heroSubtitle': 'NurQode delivers exceptional web development services tailored for businesses across the Middle East and North America. From Qatar to Canada, we build digital experiences that drive growth.',
                 'ourServices': 'Our Services',
                 'getInTouch': 'Get In Touch',
-                
-                // Services Section
                 'servicesTitle': 'Our Services',
                 'servicesSubtitle': 'Comprehensive web development solutions for your business',
                 'customWeb': 'Custom Web Development',
@@ -1815,49 +1467,46 @@ function updatePrices() {
                 'maintenanceDesc': 'Ongoing support and updates to keep your website secure and performing at its best.',
                 'consulting': 'Consulting',
                 'consultingDesc': 'Expert advice on digital strategy and how to maximize your online presence.',
-                
-                // Pricing Section
-                'pricingTitle': 'Pricing Plans',
-                'pricingSubtitle': 'Flexible packages to suit businesses of all sizes',
-                'starterPlan': 'Starter',
-                'starterDesc': 'Perfect for small businesses and startups',
-                'proPlan': 'Professional',
-                'proDesc': 'Our most popular package for growing businesses',
-                'enterprisePlan': 'Enterprise',
-                'enterpriseDesc': 'Comprehensive solution for large organizations',
-                
-                // Features
-                'feature1': '5 Page Website',
-                'feature2': 'Responsive Design',
-                'feature3': 'Basic SEO Setup',
-                'feature4': 'Contact Form',
-                'feature5': '1 Month Support',
-                'feature6': '10 Page Website',
-                'feature7': 'E-Commerce Functionality',
-                'feature8': 'Advanced SEO',
+                'pricingTitle': 'Professional Web Development Packages',
+                'pricingSubtitle': 'Complete solutions including development and premium hosting',
+                'starterPlan': '🚀 Starter Package',
+                'starterDesc': 'Perfect for small businesses & startups',
+                'proPlan': '💼 Business Package',
+                'proDesc': 'Most popular for growing businesses',
+                'enterprisePlan': '⭐ Premium Package',
+                'enterpriseDesc': 'For established businesses & brands',
+                'feature1': '5 Page Professional Website',
+                'feature2': 'Mobile-Responsive Design',
+                'feature3': 'Basic SEO Optimization',
+                'feature4': 'Contact Integration',
+                'feature5': '1 Month Free Hosting',
+                'feature6': '10 Page Website + Blog',
+                'feature7': 'E-Commerce Ready',
+                'feature8': 'Advanced SEO Setup',
                 'feature9': 'Social Media Integration',
-                'feature10': '3 Months Support',
+                'feature10': '3 Months Free Hosting',
                 'feature11': 'Content Management System',
                 'feature12': 'Unlimited Pages',
                 'feature13': 'Custom Web Applications',
                 'feature14': 'Multi-language Support',
-                'feature15': 'Priority Support',
-                'feature16': '6 Months Support',
                 'feature17': 'Advanced Analytics',
-                'feature18': 'Dedicated Account Manager',
-                
+                'feature16': '6 Months Free Hosting',
+                'feature18': 'Performance Optimization',
                 'getStarted': 'Get Started',
-                'exchangeNotice': 'Prices are converted using current exchange rates. Actual amounts may vary.',
-                
-                // About Section
+                'hostingBenefits': '🎯 What\'s Included in Hosting?',
+                'benefit1': 'Blazing Fast',
+                'benefit1Desc': 'Premium servers for instant loading',
+                'benefit2': 'Secure & Safe',
+                'benefit2Desc': 'SSL, backups & protection',
+                'benefit3': 'Expert Support',
+                'benefit3Desc': 'We handle all technical issues',
+                'benefit4': 'Always Online',
+                'benefit4Desc': '99.9% uptime guarantee',
                 'aboutTitle': 'About NurQode',
                 'aboutDesc1': 'NurQode was founded with a vision to provide premium web development services across the Middle East and North America. Our name combines "Nur" (light in Arabic) with "Qode" (code), representing our mission to illuminate the digital landscape with exceptional coding solutions.',
                 'aboutDesc2': 'With teams across multiple countries in the region, we understand the unique needs and preferences of Middle Eastern and North American businesses. Our developers are skilled in creating websites that not only look stunning but also perform exceptionally in local markets.',
                 'aboutDesc3': 'We pride ourselves on delivering projects on time, within budget, and exceeding client expectations. Our commitment to quality and customer satisfaction has made us a trusted partner for businesses from Qatar to Canada.',
                 'contactUs': 'Contact Us',
-                'teamText': 'NurQode Team',
-                
-                // FAQ Section
                 'faqTitle': 'Frequently Asked Questions',
                 'faqSubtitle': 'Get answers to common questions about our web development services',
                 'faq1': 'How long does it take to build a website?',
@@ -1871,24 +1520,27 @@ function updatePrices() {
                 'faq5': 'Do you offer custom web applications?',
                 'faq5Answer': 'Absolutely! Our Enterprise package includes custom web application development. We build tailored solutions for businesses needing specific functionality beyond standard websites.',
                 'maintenancePackages': 'maintenance packages',
-                
-                // Contact Section
                 'contactTitle': 'Contact Us',
                 'contactSubtitle': 'Get in touch to discuss your project',
                 'conversationTitle': 'Let\'s Start a Conversation',
                 'conversationDesc': 'Ready to take your online presence to the next level? Contact us today for a free consultation and quote.',
                 'officesText': 'Offices in Doha, Dubai, Riyadh, and Istanbul',
-                
-                // Form Labels
-                'fullName': 'Full Name',
+                'companyName': 'NurQode',
+                'companyDesc': 'Premium web development solutions for the Middle East and North America. Building digital experiences that drive growth.',
+                'quickLinks': 'Quick Links',
+                'contactInfo': 'Contact Info',
+                'dohaQatar': 'Doha, Qatar',
+                'allRights': 'All rights reserved.',
+                'loginTitle': 'Login to Your Account',
                 'emailAddress': 'Email Address',
-                'phoneNumber': 'Phone Number',
+                'password': 'Password',
+                'login': 'Login',
+                'noAccount': 'Don\'t have an account?',
+                'signup': 'Sign up',
+                'signupTitle': 'Create an Account',
+                'fullName': 'Full Name',
                 'selectCountry': 'Country',
                 'selectCountryOption': 'Select your country',
-                'projectDetails': 'Project Details',
-                'sendMessage': 'Send Message',
-                
-                // Country Options
                 'usaOption': 'United States',
                 'canadaOption': 'Canada',
                 'qatarOption': 'Qatar',
@@ -1900,39 +1552,19 @@ function updatePrices() {
                 'lebanonOption': 'Lebanon',
                 'turkeyOption': 'Turkey',
                 'jordanOption': 'Jordan',
-                
-                // Footer
-                'companyName': 'NurQode',
-                'companyDesc': 'Premium web development solutions for the Middle East and North America. Building digital experiences that drive growth.',
-                'quickLinks': 'Quick Links',
-                'contactInfo': 'Contact Info',
-                'dohaQatar': 'Doha, Qatar',
-                'allRights': 'All rights reserved.',
-                
-                // Modals
-                'loginTitle': 'Login to Your Account',
-                'password': 'Password',
-                'login': 'Login',
-                'noAccount': 'Don\'t have an account?',
-                'signup': 'Sign up',
-                'signupTitle': 'Create an Account',
                 'haveAccount': 'Already have an account?'
             },
             ar: {
-                // Navigation
+                // ... (your full Arabic translations remain exactly the same)
                 'home': 'الرئيسية',
                 'services': 'خدماتنا',
                 'pricing': 'الأسعار',
                 'about': 'من نحن',
                 'contact': 'اتصل بنا',
-                
-                // Hero Section
                 'heroTitle': 'حلوب ويب متميزة <span>لشرق الأوسط وأمريكا الشمالية</span>',
                 'heroSubtitle': 'تقدم نوركود خدمات تطوير ويب استثنائية مصممة خصيصًا للشركات في جميع أنحاء الشرق الأوسط وأمريكا الشمالية. من قطر إلى كندا، نبني تجارب رقمية تعزز النمو.',
                 'ourServices': 'خدماتنا',
                 'getInTouch': 'اتصل بنا',
-                
-                // Services Section
                 'servicesTitle': 'خدماتنا',
                 'servicesSubtitle': 'حلول شاملة لتطوير الويب لعملك',
                 'customWeb': 'تطوير ويب مخصص',
@@ -1947,49 +1579,46 @@ function updatePrices() {
                 'maintenanceDesc': 'دعم وتحديثات مستمرة للحفاظ على أمان موقعك وأدائه بأفضل صورة.',
                 'consulting': 'استشارات',
                 'consultingDesc': 'نصائح خبراء حول الاستراتيجية الرقمية وكيفية تعظيم وجودك على الإنترنت.',
-                
-                // Pricing Section
-                'pricingTitle': 'خطط الأسعار',
-                'pricingSubtitle': 'باقات مرنة تناسب الشركات من جميع الأحجام',
-                'starterPlan': 'البداية',
+                'pricingTitle': 'باقات تطوير الويب الاحترافية',
+                'pricingSubtitle': 'حلول كاملة تشمل التطوير والاستضافة المميزة',
+                'starterPlan': '🚀 باقة البداية',
                 'starterDesc': 'مثالي للشركات الصغيرة والشركات الناشئة',
-                'proPlan': 'المحترف',
-                'proDesc': 'الباقة الأكثر شعبية للشركات النامية',
-                'enterprisePlan': 'المؤسسة',
-                'enterpriseDesc': 'حل شامل للمنظمات الكبيرة',
-                
-                // Features
-                'feature1': 'موقع ويب 5 صفحات',
-                'feature2': 'تصميم متجاوب',
-                'feature3': 'إعداد SEO أساسي',
-                'feature4': 'نموذج اتصال',
-                'feature5': 'دعم لمدة شهر',
-                'feature6': 'موقع ويب 10 صفحات',
-                'feature7': 'وظائف التجارة الإلكترونية',
-                'feature8': 'SEO متقدم',
+                'proPlan': '💼 باقة الأعمال',
+                'proDesc': 'الأكثر شعبية للشركات النامية',
+                'enterprisePlan': '⭐ الباقة المميزة',
+                'enterpriseDesc': 'للشركات الراسخة والعلامات التجارية',
+                'feature1': 'موقع ويب احترافي 5 صفحات',
+                'feature2': 'تصميم متجاوب للجوال',
+                'feature3': 'تحسين محركات البحث الأساسي',
+                'feature4': 'تكامل نموذج الاتصال',
+                'feature5': 'استضافة مجانية لمدة شهر',
+                'feature6': 'موقع ويب 10 صفحات + مدونة',
+                'feature7': 'جاهز للتجارة الإلكترونية',
+                'feature8': 'إعداد SEO متقدم',
                 'feature9': 'تكامل وسائل التواصل الاجتماعي',
-                'feature10': 'دعم لمدة 3 أشهر',
+                'feature10': 'استضافة مجانية لمدة 3 أشهر',
                 'feature11': 'نظام إدارة المحتوى',
                 'feature12': 'صفحات غير محدودة',
                 'feature13': 'تطبيقات ويب مخصصة',
                 'feature14': 'دعم متعدد اللغات',
-                'feature15': 'دعم مسبق',
-                'feature16': 'دعم لمدة 6 أشهر',
                 'feature17': 'تحليلات متقدمة',
-                'feature18': 'مدير حسابات مخصص',
-                
+                'feature16': 'استضافة مجانية لمدة 6 أشهر',
+                'feature18': 'تحسين الأداء',
                 'getStarted': 'ابدأ الآن',
-                'exchangeNotice': 'يتم تحويل الأسعار باستخدام أسعار الصرف الحالية. قد تختلف المبالغ الفعلية.',
-                
-                // About Section
+                'hostingBenefits': '🎯 ما المضمن في الاستضافة؟',
+                'benefit1': 'سريع جدًا',
+                'benefit1Desc': 'خوادم مميزة للتحميل الفوري',
+                'benefit2': 'آمن ومحمي',
+                'benefit2Desc': 'SSL، نسخ احتياطية وحماية',
+                'benefit3': 'دعم الخبراء',
+                'benefit3Desc': 'نحن نتعامل مع جميع المشكلات التقنية',
+                'benefit4': 'دائمًا متصل',
+                'benefit4Desc': 'ضمان تشغيل 99.9%',
                 'aboutTitle': 'عن نوركود',
                 'aboutDesc1': 'تأسست نوركود برؤية لتقديم خدمات تطوير ويب متميزة في جميع أنحاء الشرق الأوسط وأمريكا الشمالية. يجمع اسمنا بين "نور" (الضوء بالعربية) و "كود" (الكود)، مما يمثل مهمتنا في إضاءة المشهد الرقمي بحلول برمجية استثنائية.',
                 'aboutDesc2': 'مع فرق في عدة دول في المنطقة، نحن نتفهم الاحتياجات والتفضيلات الفريدة للشركات في الشرق الأوسط وأمريكا الشمالية. مطورونا ماهرون في إنشاء مواقع ويب لا تبدو مذهلة فحسب، بل تعمل أيضًا بشكل استثنائي في الأسواق المحلية.',
                 'aboutDesc3': 'نفخر بتسليم المشاريع في الوقت المحدد، ضمن الميزانية، وتجاوز توقعات العملاء. التزامنا بالجودة ورضا العملاء جعلنا شريكًا موثوقًا للشركات من قطر إلى كندا.',
                 'contactUs': 'اتصل بنا',
-                'teamText': 'فريق نوركود',
-                
-                // FAQ Section
                 'faqTitle': 'الأسئلة الشائعة',
                 'faqSubtitle': 'احصل على إجابات للأسئلة الشائعة حول خدمات تطوير الويب لدينا',
                 'faq1': 'كم من الوقت يستغرق بناء موقع ويب؟',
@@ -2003,24 +1632,27 @@ function updatePrices() {
                 'faq5': 'هل تقدمون تطبيقات ويب مخصصة؟',
                 'faq5Answer': 'بالتأكيد! تتضمن باقة المؤسسة تطوير تطبيقات الويب المخصصة. نبني حلولاً مصممة خصيصًا للشركات التي تحتاج إلى وظائف محددة beyond beyond beyond المواقع القياسية.',
                 'maintenancePackages': 'باقات الصيانة',
-                
-                // Contact Section
                 'contactTitle': 'اتصل بنا',
                 'contactSubtitle': 'تواصل معنا لمناقشة مشروعك',
                 'conversationTitle': 'لنبدأ محادثة',
                 'conversationDesc': 'مستعد لرفع وجودك على الإنترنت إلى المستوى التالي؟ اتصل بنا اليوم للحصول على استشارة مجانية وعرض سعر.',
                 'officesText': 'مكاتب في الدوحة، دبي، الرياض، وإسطنبول',
-                
-                // Form Labels
-                'fullName': 'الاسم الكامل',
+                'companyName': 'نوركود',
+                'companyDesc': 'حلول تطوير ويب متميزة للشرق الأوسط وأمريكا الشمالية. بناء تجارب رقمية تعزز النمو.',
+                'quickLinks': 'روابط سريعة',
+                'contactInfo': 'معلومات الاتصال',
+                'dohaQatar': 'الدوحة، قطر',
+                'allRights': 'جميع الحقوق محفوظة.',
+                'loginTitle': 'تسجيل الدخول إلى حسابك',
                 'emailAddress': 'البريد الإلكتروني',
-                'phoneNumber': 'رقم الهاتف',
+                'password': 'كلمة المرور',
+                'login': 'تسجيل الدخول',
+                'noAccount': 'ليس لديك حساب؟',
+                'signup': 'اشتراك',
+                'signupTitle': 'إنشاء حساب',
+                'fullName': 'الاسم الكامل',
                 'selectCountry': 'البلد',
                 'selectCountryOption': 'اختر بلدك',
-                'projectDetails': 'تفاصيل المشروع',
-                'sendMessage': 'إرسال الرسالة',
-                
-                // Country Options
                 'usaOption': 'الولايات المتحدة',
                 'canadaOption': 'كندا',
                 'qatarOption': 'قطر',
@@ -2032,22 +1664,6 @@ function updatePrices() {
                 'lebanonOption': 'لبنان',
                 'turkeyOption': 'تركيا',
                 'jordanOption': 'الأردن',
-                
-                // Footer
-                'companyName': 'نوركود',
-                'companyDesc': 'حلول تطوير ويب متميزة للشرق الأوسط وأمريكا الشمالية. بناء تجارب رقمية تعزز النمو.',
-                'quickLinks': 'روابط سريعة',
-                'contactInfo': 'معلومات الاتصال',
-                'dohaQatar': 'الدوحة، قطر',
-                'allRights': 'جميع الحقوق محفوظة.',
-                
-                // Modals
-                'loginTitle': 'تسجيل الدخول إلى حسابك',
-                'password': 'كلمة المرور',
-                'login': 'تسجيل الدخول',
-                'noAccount': 'ليس لديك حساب؟',
-                'signup': 'اشتراك',
-                'signupTitle': 'إنشاء حساب',
                 'haveAccount': 'هل لديك حساب بالفعل؟'
             }
         };
@@ -2056,11 +1672,9 @@ function updatePrices() {
         const languageSelect = document.getElementById('language-select');
 
         function switchLanguage(lang) {
-            // Update text direction
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             document.documentElement.lang = lang;
             
-            // Update all translatable elements
             const elements = document.querySelectorAll('[data-translate]');
             elements.forEach(element => {
                 const key = element.getAttribute('data-translate');
@@ -2074,7 +1688,6 @@ function updatePrices() {
             });
         }
 
-        // Event listener for language change
         languageSelect.addEventListener('change', (e) => {
             switchLanguage(e.target.value);
         });
@@ -2083,8 +1696,81 @@ function updatePrices() {
         switchLanguage('en');
         
         // Initialize prices on page load
-        updatePrices();      
-        
+        updatePrices();
+
+        // Fix for purchase buttons - Add click event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Re-attach event listeners to purchase buttons
+            const purchaseButtons = document.querySelectorAll('.purchase-btn');
+            
+            purchaseButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const packageName = this.getAttribute('data-package');
+                    const packagePrice = this.closest('.pricing-card').querySelector('.price').textContent;
+                    
+                    // Open social modal
+                    const socialModal = document.getElementById('social-modal');
+                    socialModal.style.display = 'flex';
+                    
+                    // Store current package info
+                    window.currentPackage = {
+                        name: packageName,
+                        price: packagePrice
+                    };
+                });
+            });
+            
+            // Fix social modal close functionality
+            const socialModal = document.getElementById('social-modal');
+            const closeButtons = socialModal.querySelectorAll('.close-modal, #cancel-social');
+            
+            closeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    socialModal.style.display = 'none';
+                });
+            });
+            
+            // Fix social platform buttons
+            const socialOptionBtns = document.querySelectorAll('.social-option-btn');
+            socialOptionBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const platform = this.getAttribute('data-platform');
+                    if (window.currentPackage) {
+                        const messages = {
+                            'whatsapp': `Hello! I'm interested in the ${window.currentPackage.name} package (${window.currentPackage.price}). Can you provide more details and start the process?`,
+                            'email': `Hello NurQode team,\n\nI would like to get more information about your ${window.currentPackage.name} package (${window.currentPackage.price}) and discuss starting my project.\n\nPlease provide me with the next steps.\n\nBest regards,`,
+                            'messenger': `Hello! I'm interested in the ${window.currentPackage.name} package (${window.currentPackage.price}). Can we discuss the details and get started?`
+                        };
+                        
+                        const encodedMessage = encodeURIComponent(messages[platform]);
+                        const currentPageUrl = encodeURIComponent(window.location.href);
+                        
+                        const urls = {
+                            'whatsapp': `https://wa.me/97430892590?text=${encodedMessage}%0A%0AComing from: ${currentPageUrl}`,
+                            'email': `mailto:nurqode@gmail.com?subject=Inquiry About ${encodeURIComponent(window.currentPackage.name)} Package&body=${encodedMessage}%0A%0AComing from: ${currentPageUrl}`,
+                            'messenger': `https://m.me/nurqode?text=${encodedMessage}%0A%0AComing from: ${currentPageUrl}`
+                        };
+                        
+                        window.open(urls[platform], '_blank');
+                        socialModal.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Simple mobile menu fix
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const nav = document.querySelector('nav ul');
+            
+            if (mobileMenu && nav) {
+                mobileMenu.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                });
+            }
+        });
+
     </script>
 </body>
 </html>
