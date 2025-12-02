@@ -946,7 +946,7 @@
                     </ul>
                     <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 10px; border-radius: 5px; margin: 12px 0; text-align: center;">
                         <p style="margin: 0; font-weight: 600; font-size: 11px;">
-                            <span class="hosting-price" data-base="25">Then $25/month hosting</span>
+                            <span class="hosting-price" data-base="25">Then hosting starting from $25/month</span>
                         </p>
                     </div>
                     <button class="btn btn-outline purchase-btn" style="border-color: #667eea; color: #667eea;" data-package="Starter Package" data-price="$499">PURCHASE PACKAGE</button>
@@ -973,7 +973,7 @@
                     </ul>
                     <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 10px; border-radius: 5px; margin: 12px 0; text-align: center;">
                         <p style="margin: 0; font-weight: 600; font-size: 11px;">
-                            <span class="hosting-price" data-base="45">Then $45/month hosting</span>
+                            <span class="hosting-price" data-base="45">Then hosting starting from $45/month</span>
                         </p>
                     </div>
                     <button class="btn purchase-btn" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);" data-package="Business Package" data-price="$999">PURCHASE PACKAGE</button>
@@ -1000,7 +1000,7 @@
                     </ul>
                     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 10px; border-radius: 5px; margin: 12px 0; text-align: center;">
                         <p style="margin: 0; font-weight: 600; font-size: 11px;">
-                            <span class="hosting-price" data-base="75">Then $75/month hosting</span>
+                            <span class="hosting-price" data-base="75">Then hosting starting from $75/month</span>
                         </p>
                     </div>
                     <button class="btn btn-outline purchase-btn" style="border-color: #4facfe; color: #4facfe;" data-package="Premium Package" data-price="$1999">PURCHASE PACKAGE</button>
@@ -1333,9 +1333,9 @@
                 }
                 
                 if (format.position === 'after') {
-                    element.textContent = `Then ${formattedPrice}${format.symbol}/month hosting`;
+                    element.textContent = `Then hosting starting from ${formattedPrice}${format.symbol}/month`;
                 } else {
-                    element.textContent = `Then ${format.symbol}${formattedPrice}/month hosting`;
+                    element.textContent = `Then hosting starting from ${format.symbol}${formattedPrice}/month`;
                 }
             });
         }
